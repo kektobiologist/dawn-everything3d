@@ -3595,3 +3595,50 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* RTE Styles */
+.rte:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.rte > *:first-child {
+  margin-top: 0;
+}
+
+.rte > *:last-child {
+  margin-bottom: 0;
+}
+
+.rte p {
+  margin-bottom: 1.5rem;
+}
+
+.rte ul, .rte ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+  list-style: inherit;
+}
+
+.rte li {
+  margin-bottom: 0.5rem;
+}
+
+.rte a {
+  color: rgba(var(--color-link), var(--alpha-link));
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.1rem;
+  transition: text-decoration-thickness ease .1s;
+}
+
+.rte a:hover {
+  color: rgb(var(--color-link));
+  text-decoration-thickness: 0.2rem;
+}
+
+.rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}

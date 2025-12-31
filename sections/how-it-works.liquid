@@ -1,0 +1,260 @@
+<div class="how-it-works section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <div class="section-heading centered">
+        <h2 class="title {{ section.settings.heading_size }}">
+          {{ section.settings.heading | escape }}
+        </h2>
+        {%- if section.settings.subheading != blank -%}
+          <div class="subtitle">
+            {{ section.settings.subheading | escape }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="how-it-works__grid">
+      {%- for block in section.blocks -%}
+        <div class="how-it-works__card" {{ block.shopify_attributes }}>
+          <div class="how-it-works__badge">{{ forloop.index }}</div>
+          <div class="how-it-works__icon-wrapper" style="background-color: {{ block.settings.icon_bg_color }}">
+            {%- if block.settings.custom_icon != blank -%}
+              {{ block.settings.custom_icon }}
+            {%- else -%}
+              {% render 'icon-accordion', icon: 'check_mark' %}
+            {%- endif -%}
+          </div>
+          <h3 class="how-it-works__card-title">{{ block.settings.title | escape }}</h3>
+          <div class="how-it-works__card-text">
+            {{ block.settings.text }}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .how-it-works__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .how-it-works__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .how-it-works__card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .how-it-works__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+
+  .how-it-works__badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 30px;
+    height: 30px;
+    background-color: #E0F7FA;
+    color: #00BCD4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .how-it-works__icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .how-it-works__icon-wrapper svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+  }
+
+  .how-it-works__card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .how-it-works__card-text {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .centered {
+    text-align: center;
+  }
+
+  .subtitle {
+    margin-top: 1rem;
+    color: #666;
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "How It Works",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading Size"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "From photo to figurine in three simple steps",
+      "label": "Subheading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Step Title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Description of this step.</p>",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "icon_bg_color",
+          "label": "Icon Background Color",
+          "default": "#00BCD4"
+        },
+        {
+          "type": "html",
+          "id": "custom_icon",
+          "label": "Custom SVG Icon",
+          "info": "Paste SVG code here. If empty, a default icon will be used."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Upload Your Photo",
+            "icon_bg_color": "#4DD0E1"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "AI Creates 3D Model",
+            "icon_bg_color": "#FF8A65"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "We Print & Ship",
+            "icon_bg_color": "#4DD0E1"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

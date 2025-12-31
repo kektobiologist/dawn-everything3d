@@ -1,0 +1,276 @@
+{
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "settings": {
+        "image_overlay_opacity": 20,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Turn Your Memories into Miniatures",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Custom 3D printed figurines from your photos. The perfect personalized gift.",
+            "text_style": "body"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Create Yours Now",
+            "button_link_1": "/products/mini-me",
+            "button_style_secondary_1": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "buttons"
+      ]
+    },
+    "intro": {
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Choose Mini-Me?",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We combine advanced 3D modeling with high-quality printing to bring your digital photos to the physical world. Whether it's a cherished family portrait, a beloved pet, or a fun selfie, we turn it into a lasting keepsake.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ]
+    },
+    "how_it_works": {
+      "type": "how-it-works",
+      "settings": {
+        "heading": "How It Works",
+        "subheading": "From photo to figurine in three simple steps",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "step1": {
+          "type": "step",
+          "settings": {
+            "title": "Upload Your Photo",
+            "text": "<p>Simply upload a clear photo of yourself or your loved one. Our AI works best with front-facing photos.</p>",
+            "icon_bg_color": "#4DD0E1"
+          }
+        },
+        "step2": {
+          "type": "step",
+          "settings": {
+            "title": "AI Creates 3D Model",
+            "text": "<p>Our advanced AI transforms your photo into a unique cartoon-style 3D figure, capturing your personality and features.</p>",
+            "icon_bg_color": "#FF8A65"
+          }
+        },
+        "step3": {
+          "type": "step",
+          "settings": {
+            "title": "We Print & Ship",
+            "text": "<p>We 3D print your mini-me figurine with premium materials and ship it directly to your doorstep.</p>",
+            "icon_bg_color": "#4DD0E1"
+          }
+        }
+      },
+      "block_order": [
+        "step1",
+        "step2",
+        "step3"
+      ]
+    },
+    "showcase": {
+      "type": "image-with-text",
+      "settings": {
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1"
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lifelike Detail",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>See the difference. Our miniatures capture the essence of the moment. From the fold of a shirt to the smile on a face, we pay attention to every little detail.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "View Gallery",
+            "button_link": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "heading": "What Our Customers Say",
+        "bg_color": "#F9FAFB",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "I was blown away by the detail! It looks exactly like the photo I sent. Best gift ever.",
+            "author_name": "Sarah J.",
+            "stars": 5
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The process was so easy and the team was very helpful. Highly recommend!",
+            "author_name": "Mike T.",
+            "stars": 5
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Ordered one for my husband's birthday and he loved it. Unique and high quality.",
+            "author_name": "Emily R.",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ]
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "settings": {
+        "caption": "Common Questions",
+        "heading": "Frequently Asked Questions",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2"
+      },
+      "blocks": {
+        "q1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take?",
+            "row_content": "<p>Typically, the entire process from upload to delivery takes about 2-3 weeks. We take time to ensure the 3D model is perfect before printing.</p>"
+          }
+        },
+        "q2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What kind of photos do I need?",
+            "row_content": "<p>High-resolution photos with good lighting work best. A front view is essential, and side views are helpful if available.</p>"
+          }
+        },
+        "q3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the miniatures made of?",
+            "row_content": "<p>We use high-quality, durable resin that captures fine details and is hand-painted for a realistic finish.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    "cta": {
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "accent-1",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ready to Immortalize a Moment?",
+            "heading_size": "h2"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Start Your Mini-Me",
+            "button_link": "/products/mini-me",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "intro",
+    "how_it_works",
+    "showcase",
+    "testimonials",
+    "faq",
+    "cta"
+  ]
+}
