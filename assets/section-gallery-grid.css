@@ -1,0 +1,230 @@
+.gallery-grid {
+  text-align: center;
+}
+
+.gallery-grid__header {
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .gallery-grid__header {
+    padding: 0;
+  }
+}
+
+.gallery-grid__title {
+  margin: 0 0 0.5rem;
+}
+
+.gallery-grid__subtitle {
+  margin: 0;
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.7);
+}
+
+@media screen and (min-width: 750px) {
+  .gallery-grid__subtitle {
+    font-size: 1.35rem;
+  }
+}
+
+/* Horizontal Scroll Container */
+.gallery-grid__scroll-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gallery-grid__container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 1.5rem 1rem;
+}
+
+.gallery-grid__container::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .gallery-grid__container {
+    gap: 1.5rem;
+    padding: 0 2rem 1rem;
+  }
+}
+
+/* Item Styles */
+.gallery-grid__item {
+  flex-shrink: 0;
+  width: 280px;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-grid__item--featured {
+  width: 340px;
+}
+
+@media screen and (min-width: 750px) {
+  .gallery-grid__item {
+    width: 320px;
+  }
+
+  .gallery-grid__item--featured {
+    width: 420px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .gallery-grid__item {
+    width: 360px;
+  }
+
+  .gallery-grid__item--featured {
+    width: 480px;
+  }
+}
+
+.gallery-grid__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f5f5f5;
+  aspect-ratio: 3/4;
+}
+
+.gallery-grid__item--video .gallery-grid__media {
+  aspect-ratio: 9/16;
+}
+
+.gallery-grid__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid__item:hover .gallery-grid__image {
+  transform: scale(1.03);
+}
+
+.gallery-grid__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-grid__youtube {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-grid__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-grid__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background: rgba(0,0,0,0.7);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-grid__play-btn:hover {
+  background: rgba(0,0,0,0.9);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.gallery-grid__play-btn svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+}
+
+.gallery-grid__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.gallery-grid__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: #fff;
+  font-size: 1.05rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-grid__item:hover .gallery-grid__caption {
+  opacity: 1;
+}
+
+.gallery-grid__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-grid__placeholder .placeholder-svg {
+  max-width: 50%;
+  max-height: 50%;
+}
+
+/* Scroll Indicators */
+.gallery-grid__scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: rgba(var(--color-foreground), 0.5);
+  font-size: 0.9rem;
+}
+
+.gallery-grid__scroll-hint svg {
+  width: 20px;
+  height: 20px;
+  animation: scroll-hint 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+@media screen and (min-width: 990px) {
+  .gallery-grid__scroll-hint {
+    display: none;
+  }
+}

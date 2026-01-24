@@ -1,0 +1,225 @@
+{{ 'section-hero-responsive.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #Hero-{{ section.id }} {
+    --hero-height-mobile: {{ section.settings.mobile_height }}vh;
+    --hero-height-desktop: {{ section.settings.desktop_height }}vh;
+  }
+
+  #Hero-{{ section.id }}::after {
+    opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+  }
+{%- endstyle -%}
+
+<div id="Hero-{{ section.id }}" class="hero-responsive{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+  {%- if section.settings.mobile_image != blank -%}
+    <div class="hero-responsive__media hero-responsive__media--mobile">
+      {{
+        section.settings.mobile_image
+        | image_url: width: 1500
+        | image_tag:
+          widths: '375, 550, 750, 1000, 1500',
+          sizes: '100vw',
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'hero-responsive__image'
+      }}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.desktop_image != blank -%}
+    <div class="hero-responsive__media hero-responsive__media--desktop">
+      {{
+        section.settings.desktop_image
+        | image_url: width: 3840
+        | image_tag:
+          widths: '1000, 1500, 2000, 2500, 3000, 3840',
+          sizes: '100vw',
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'hero-responsive__image'
+      }}
+    </div>
+  {%- elsif section.settings.mobile_image != blank -%}
+    <div class="hero-responsive__media hero-responsive__media--desktop">
+      {{
+        section.settings.mobile_image
+        | image_url: width: 3840
+        | image_tag:
+          widths: '1000, 1500, 2000, 2500, 3000, 3840',
+          sizes: '100vw',
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'hero-responsive__image'
+      }}
+    </div>
+  {%- else -%}
+    <div class="hero-responsive__media hero-responsive__media--desktop hero-responsive__placeholder">
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.show_overlay -%}
+    <div class="hero-responsive__overlay"></div>
+  {%- endif -%}
+
+  {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.button_label != blank -%}
+    <div class="hero-responsive__content hero-responsive__content--{{ section.settings.content_position }}">
+      <div class="hero-responsive__content-inner color-{{ section.settings.color_scheme }}">
+        {%- if section.settings.heading != blank -%}
+          <h1 class="hero-responsive__heading {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
+          </h1>
+        {%- endif -%}
+
+        {%- if section.settings.subheading != blank -%}
+          <p class="hero-responsive__subheading">
+            {{ section.settings.subheading }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a
+            href="{{ section.settings.button_link }}"
+            class="button button--primary hero-responsive__button"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Hero (Responsive)",
+  "tag": "section",
+  "class": "section-hero-responsive",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image",
+      "info": "Recommended: 1920x1080 or larger"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image",
+      "info": "Recommended: 750x1000 or taller. Falls back to desktop image if not set."
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Desktop height",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Mobile height",
+      "default": 70
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "default": true,
+      "label": "Show overlay"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" },
+        { "value": "hxl", "label": "Extra large" }
+      ],
+      "default": "h0",
+      "label": "Heading size"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "options": [
+        { "value": "top-left", "label": "Top left" },
+        { "value": "top-center", "label": "Top center" },
+        { "value": "top-right", "label": "Top right" },
+        { "value": "middle-left", "label": "Middle left" },
+        { "value": "middle-center", "label": "Middle center" },
+        { "value": "middle-right", "label": "Middle right" },
+        { "value": "bottom-left", "label": "Bottom left" },
+        { "value": "bottom-center", "label": "Bottom center" },
+        { "value": "bottom-right", "label": "Bottom right" }
+      ],
+      "default": "middle-center",
+      "label": "Content position"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero (Responsive)"
+    }
+  ]
+}
+{% endschema %}

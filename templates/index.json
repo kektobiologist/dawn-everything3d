@@ -1,85 +1,305 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "hero-responsive",
+      "settings": {
+        "desktop_height": 85,
+        "mobile_height": 75,
+        "show_overlay": true,
+        "overlay_opacity": 25,
+        "heading": "",
+        "heading_size": "h0",
+        "subheading": "",
+        "button_label": "",
+        "button_link": "",
+        "content_position": "bottom-center",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "cta_section": {
+      "type": "cta-cards",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "couple": {
+          "type": "card",
           "settings": {
-            "heading": "Mini-Me Figurines",
-            "heading_size": "h0"
+            "title": "Couple Figurine",
+            "price": "Starting at $149",
+            "button_label": "Order Now",
+            "link": "shopify://collections/mini-me-figurine"
           }
         },
-        "button": {
-          "type": "buttons",
+        "single": {
+          "type": "card",
           "settings": {
-            "button_label_1": "Get your mini figurine!",
-            "button_link_1": "shopify://collections/mini-me-figurine",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "title": "Single Figurine",
+            "price": "Starting at $99",
+            "button_label": "Order Now",
+            "link": "shopify://collections/mini-me-figurine"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["couple", "single"],
       "settings": {
-        "image": "shopify://shop_images/Gemini_Generated_Image_6fhiu16fhiu16fhi.png",
-        "image_overlay_opacity": 40,
-        "image_height": "adapt",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-left",
-        "desktop_content_alignment": "right",
-        "show_text_box": false,
-        "color_scheme": "scheme-4",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
+        "tagline": "Turn your favorite moments into lasting memories",
+        "tagline_size": "h2",
+        "main_button_label": "Create Your Figurine",
+        "main_button_link": "shopify://collections/mini-me-figurine",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "how_it_works": {
+      "type": "how-it-works",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Send Your Photos",
+            "description": "<p>Share clear photos showing faces of the person or couple you want to immortalize.</p>",
+            "icon": "upload",
+            "icon_color": "#4A90D9"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Review Designs",
+            "description": "<p>We create and send you multiple 3D render options to choose from.</p>",
+            "icon": "design",
+            "icon_color": "#E85D75"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "We 3D Print",
+            "description": "<p>Once you approve, we 3D print your figurine 100% in-house with premium materials.</p>",
+            "icon": "print",
+            "icon_color": "#50C878"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Fast Shipping",
+            "description": "<p>Your finished figurine ships within 48 hours of approval.</p>",
+            "icon": "ship",
+            "icon_color": "#9B59B6"
+          }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3", "step_4"],
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
+        "heading": "How It Works",
+        "heading_size": "h1",
+        "subheading": "From photo to figurine in four simple steps",
         "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "gallery": {
+      "type": "gallery-grid",
+      "blocks": {
+        "img_1": {
+          "type": "image",
+          "settings": {
+            "featured": true
+          }
+        },
+        "img_2": {
+          "type": "image",
+          "settings": {}
+        },
+        "img_3": {
+          "type": "image",
+          "settings": {}
+        },
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "caption": "3D Printing Timelapse"
+          }
+        },
+        "img_4": {
+          "type": "image",
+          "settings": {}
+        },
+        "img_5": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": ["img_1", "img_2", "img_3", "video_1", "img_4", "img_5"],
+      "settings": {
+        "heading": "Our Creations",
+        "heading_size": "h1",
+        "subheading": "A glimpse of the figurines we've brought to life",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The figurine exceeded our expectations! It looks exactly like us. Perfect anniversary gift.",
+            "author_name": "Sarah & Mike",
+            "author_title": "Anniversary Gift",
+            "stars": 5
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Amazing quality and fast delivery. My parents loved their figurine!",
+            "author_name": "Jennifer L.",
+            "author_title": "Verified Buyer",
+            "stars": 5
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The attention to detail is incredible. Highly recommend for unique gifts!",
+            "author_name": "David K.",
+            "author_title": "Verified Buyer",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "bg_color": "#F9FAFB",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "logo_bar": {
+      "type": "logo-bar",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "name": "Google"
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "name": "Microsoft"
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "name": "Apple"
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "name": "Amazon"
+          }
+        },
+        "logo_5": {
+          "type": "logo",
+          "settings": {
+            "name": "Meta"
+          }
+        }
+      },
+      "block_order": ["logo_1", "logo_2", "logo_3", "logo_4", "logo_5"],
+      "settings": {
+        "heading": "Trusted by people at",
+        "logo_height": 40,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does it take to receive my figurine?",
+            "icon": "stopwatch",
+            "row_content": "<p>After you approve the 3D render, your figurine ships within 48 hours. Typical delivery is 5-7 business days depending on your location.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What kind of photos should I send?",
+            "icon": "eye",
+            "row_content": "<p>Send clear, well-lit photos showing the face(s) from the front. Multiple angles help us capture likeness better. Avoid blurry or heavily filtered photos.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What size are the figurines?",
+            "icon": "ruler",
+            "row_content": "<p>Our standard figurines are approximately 6 inches tall. We also offer larger sizes upon request. Contact us for custom sizing options.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I request changes to the design?",
+            "icon": "chat_bubble",
+            "row_content": "<p>Absolutely! We include up to 2 rounds of revisions with every order. We want you to be 100% happy with your figurine before we print it.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What material is used for the figurines?",
+            "icon": "check_mark",
+            "row_content": "<p>We use premium PLA+ filament, which is durable, eco-friendly, and provides excellent detail. All figurines are hand-painted and finished in-house.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you ship internationally?",
+            "icon": "plane",
+            "row_content": "<p>Yes! We ship worldwide. International shipping typically takes 7-14 business days. Shipping costs are calculated at checkout based on your location.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6"],
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-2",
+        "open_first_collapsible_row": false,
         "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "desktop_layout": "image_second",
+        "padding_top": 52,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero",
+    "cta_section",
+    "how_it_works",
+    "gallery",
+    "logo_bar",
+    "testimonials",
+    "faq"
   ]
 }

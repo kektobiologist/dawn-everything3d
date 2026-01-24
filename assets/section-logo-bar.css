@@ -1,0 +1,86 @@
+.logo-bar {
+  text-align: center;
+}
+
+.logo-bar__heading {
+  margin: 0 0 1.5rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(var(--color-foreground), 0.6);
+  font-weight: 500;
+}
+
+@media screen and (min-width: 750px) {
+  .logo-bar__heading {
+    font-size: 1.5rem;
+  }
+}
+
+.logo-bar__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .logo-bar__grid {
+    gap: 2rem 4rem;
+  }
+}
+
+.logo-bar__logo {
+  flex-shrink: 0;
+}
+
+.logo-bar__logo a {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.logo-bar__logo a:hover {
+  opacity: 0.7;
+}
+
+.logo-bar__logo img {
+  width: auto;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-bar__logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.logo-bar__logo svg {
+  width: auto;
+  height: auto;
+}
+
+.logo-bar__logo .placeholder-svg {
+  width: 100px;
+  height: 40px;
+  opacity: 0.3;
+}
+
+.logo-bar__text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(var(--color-foreground), 0.5);
+  transition: color 0.3s ease;
+}
+
+@media screen and (min-width: 750px) {
+  .logo-bar__text {
+    font-size: 1.4rem;
+  }
+}
+
+.logo-bar__logo:hover .logo-bar__text {
+  color: rgba(var(--color-foreground), 0.8);
+}

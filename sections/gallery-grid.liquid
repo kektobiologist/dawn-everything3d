@@ -1,0 +1,281 @@
+{{ 'section-gallery-grid.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="gallery-grid color-{{ section.settings.color_scheme }} gradient">
+  <div class="section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <div class="gallery-grid__header page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 class="gallery-grid__title {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="gallery-grid__subtitle">{{ section.settings.subheading }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="gallery-grid__scroll-wrapper">
+      <div class="gallery-grid__container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'image' -%}
+            <div
+              class="gallery-grid__item gallery-grid__item--image{% if block.settings.featured %} gallery-grid__item--featured{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              {%- if block.settings.image != blank -%}
+                <div class="gallery-grid__media">
+                  {{
+                    block.settings.image
+                    | image_url: width: 800
+                    | image_tag:
+                      widths: '280, 320, 360, 420, 480, 640, 800',
+                      sizes: '(min-width: 990px) 360px, (min-width: 750px) 320px, 280px',
+                      class: 'gallery-grid__image',
+                      loading: 'lazy'
+                  }}
+                  {%- if block.settings.caption != blank -%}
+                    <div class="gallery-grid__caption">
+                      {{ block.settings.caption }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- else -%}
+                <div class="gallery-grid__media gallery-grid__placeholder">
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              {%- endif -%}
+            </div>
+
+          {%- elsif block.type == 'video' -%}
+            <div
+              class="gallery-grid__item gallery-grid__item--video{% if block.settings.featured %} gallery-grid__item--featured{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              <div class="gallery-grid__media">
+                {%- if block.settings.video_url != blank -%}
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    class="gallery-grid__video"
+                    poster="{{ block.settings.poster | image_url: width: 600 }}"
+                  >
+                    <source src="{{ block.settings.video_url }}" type="video/mp4">
+                  </video>
+                {%- elsif block.settings.youtube_url != blank -%}
+                  {%- assign youtube_id = block.settings.youtube_url | split: 'v=' | last | split: '&' | first -%}
+                  {%- if block.settings.youtube_url contains 'youtu.be' -%}
+                    {%- assign youtube_id = block.settings.youtube_url | split: 'youtu.be/' | last | split: '?' | first -%}
+                  {%- endif -%}
+                  <div class="gallery-grid__youtube" data-youtube-id="{{ youtube_id }}">
+                    {%- if block.settings.poster != blank -%}
+                      {{
+                        block.settings.poster
+                        | image_url: width: 600
+                        | image_tag:
+                          class: 'gallery-grid__poster',
+                          loading: 'lazy'
+                      }}
+                    {%- else -%}
+                      <img
+                        src="https://img.youtube.com/vi/{{ youtube_id }}/maxresdefault.jpg"
+                        alt=""
+                        class="gallery-grid__poster"
+                        loading="lazy"
+                      >
+                    {%- endif -%}
+                    <button class="gallery-grid__play-btn" aria-label="Play video">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </button>
+                  </div>
+                {%- else -%}
+                  <div class="gallery-grid__placeholder">
+                    {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.caption != blank -%}
+                  <div class="gallery-grid__caption">
+                    {{ block.settings.caption }}
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="gallery-grid__scroll-hint">
+      <span>Swipe to see more</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.gallery-grid__youtube').forEach(function(el) {
+      el.addEventListener('click', function() {
+        const youtubeId = this.dataset.youtubeId;
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + youtubeId + '?autoplay=1';
+        iframe.allow = 'autoplay; encrypted-media';
+        iframe.allowFullscreen = true;
+        iframe.className = 'gallery-grid__iframe';
+        this.innerHTML = '';
+        this.appendChild(iframe);
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Gallery Grid",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Our Creations",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "default": false,
+          "label": "Make larger (featured)"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL (MP4)",
+          "info": "Direct link to MP4 file. Will autoplay muted."
+        },
+        {
+          "type": "text",
+          "id": "youtube_url",
+          "label": "Or YouTube URL",
+          "info": "Paste full YouTube URL. Shows thumbnail until clicked."
+        },
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Poster image",
+          "info": "Thumbnail for video"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "default": false,
+          "label": "Make larger (featured)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gallery Grid",
+      "blocks": [
+        { "type": "image", "settings": { "featured": true } },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "video" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}
