@@ -50,7 +50,7 @@
       }
     },
     "how_it_works": {
-      "type": "how-it-works",
+      "type": "how-it-works-tabs",
       "blocks": {
         "step_1": {
           "type": "step",
@@ -94,6 +94,9 @@
         "heading": "How It Works",
         "heading_size": "h1",
         "subheading": "From photo to figurine in four simple steps",
+        "autoplay": true,
+        "autoplay_speed": 5000,
+        "media_position": "left",
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60

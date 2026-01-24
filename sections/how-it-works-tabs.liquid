@@ -1,0 +1,492 @@
+{{ 'section-how-it-works-tabs.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="how-it-works-tabs color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <div class="how-it-works-tabs__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 class="how-it-works-tabs__title {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+        {%- if section.settings.subheading != blank -%}
+          <p class="how-it-works-tabs__subtitle">
+            {{ section.settings.subheading }}
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="how-it-works-tabs__container" data-autoplay="{{ section.settings.autoplay }}" data-autoplay-speed="{{ section.settings.autoplay_speed }}">
+      <!-- Mobile Tab Pills -->
+      <div class="how-it-works-tabs__pills">
+        {%- for block in section.blocks -%}
+          <button
+            class="how-it-works-tabs__pill{% if forloop.first %} how-it-works-tabs__pill--active{% endif %}"
+            data-tab-index="{{ forloop.index0 }}"
+            {{ block.shopify_attributes }}
+          >
+            <span class="how-it-works-tabs__pill-number">{{ forloop.index }}</span>
+            <span class="how-it-works-tabs__pill-title">{{ block.settings.title }}</span>
+          </button>
+        {%- endfor -%}
+      </div>
+
+      <div class="how-it-works-tabs__main">
+        <!-- Media Area -->
+        <div class="how-it-works-tabs__media">
+          {%- for block in section.blocks -%}
+            <div
+              class="how-it-works-tabs__media-item{% if forloop.first %} how-it-works-tabs__media-item--active{% endif %}"
+              data-media-index="{{ forloop.index0 }}"
+            >
+              {%- if block.settings.video_url != blank -%}
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="how-it-works-tabs__video"
+                >
+                  <source src="{{ block.settings.video_url }}" type="video/mp4">
+                </video>
+              {%- elsif block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 1200
+                  | image_tag:
+                    widths: '400, 600, 800, 1000, 1200',
+                    sizes: '(min-width: 990px) 50vw, 100vw',
+                    class: 'how-it-works-tabs__image',
+                    loading: 'lazy'
+                }}
+              {%- else -%}
+                <div class="how-it-works-tabs__placeholder">
+                  <div class="how-it-works-tabs__placeholder-icon" style="background-color: {{ block.settings.icon_color }}">
+                    {%- if block.settings.icon == 'upload' -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    {%- elsif block.settings.icon == 'design' -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    {%- elsif block.settings.icon == 'print' -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                    {%- elsif block.settings.icon == 'ship' -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    {%- else -%}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    {%- endif -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+
+          <!-- Progress bar for autoplay -->
+          {%- if section.settings.autoplay -%}
+            <div class="how-it-works-tabs__progress">
+              <div class="how-it-works-tabs__progress-bar"></div>
+            </div>
+          {%- endif -%}
+        </div>
+
+        <!-- Desktop Tab Buttons -->
+        <div class="how-it-works-tabs__tabs">
+          {%- for block in section.blocks -%}
+            <button
+              class="how-it-works-tabs__tab{% if forloop.first %} how-it-works-tabs__tab--active{% endif %}"
+              data-tab-index="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}
+            >
+              <span class="how-it-works-tabs__tab-number">{{ forloop.index }}</span>
+              <div class="how-it-works-tabs__tab-content">
+                <h3 class="how-it-works-tabs__tab-title">{{ block.settings.title }}</h3>
+                {%- if block.settings.description != blank -%}
+                  <div class="how-it-works-tabs__tab-description rte">
+                    {{ block.settings.description }}
+                  </div>
+                {%- endif -%}
+              </div>
+            </button>
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <!-- Mobile Description (below media) -->
+      <div class="how-it-works-tabs__mobile-descriptions">
+        {%- for block in section.blocks -%}
+          <div
+            class="how-it-works-tabs__mobile-description{% if forloop.first %} how-it-works-tabs__mobile-description--active{% endif %}"
+            data-description-index="{{ forloop.index0 }}"
+          >
+            {%- if block.settings.description != blank -%}
+              <div class="rte">
+                {{ block.settings.description }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const containers = document.querySelectorAll('.how-it-works-tabs__container');
+
+    containers.forEach(function(container) {
+      const tabs = container.querySelectorAll('.how-it-works-tabs__tab');
+      const pills = container.querySelectorAll('.how-it-works-tabs__pill');
+      const mediaItems = container.querySelectorAll('.how-it-works-tabs__media-item');
+      const descriptions = container.querySelectorAll('.how-it-works-tabs__mobile-description');
+      const progressBar = container.querySelector('.how-it-works-tabs__progress-bar');
+
+      const autoplay = container.dataset.autoplay === 'true';
+      const autoplaySpeed = parseInt(container.dataset.autoplaySpeed) || 5000;
+
+      let currentIndex = 0;
+      let autoplayInterval = null;
+      let isPaused = false;
+
+      function setActiveTab(index) {
+        currentIndex = index;
+
+        // Update desktop tabs
+        tabs.forEach(function(tab, i) {
+          tab.classList.toggle('how-it-works-tabs__tab--active', i === index);
+        });
+
+        // Update mobile pills
+        pills.forEach(function(pill, i) {
+          pill.classList.toggle('how-it-works-tabs__pill--active', i === index);
+        });
+
+        // Update media items with fade effect
+        mediaItems.forEach(function(item, i) {
+          item.classList.toggle('how-it-works-tabs__media-item--active', i === index);
+        });
+
+        // Update mobile descriptions
+        descriptions.forEach(function(desc, i) {
+          desc.classList.toggle('how-it-works-tabs__mobile-description--active', i === index);
+        });
+
+        // Reset progress bar
+        if (progressBar && autoplay) {
+          progressBar.style.animation = 'none';
+          progressBar.offsetHeight; // Trigger reflow
+          progressBar.style.animation = 'progressFill ' + autoplaySpeed + 'ms linear forwards';
+        }
+      }
+
+      function nextTab() {
+        const next = (currentIndex + 1) % tabs.length;
+        setActiveTab(next);
+      }
+
+      function startAutoplay() {
+        if (autoplay && !isPaused) {
+          autoplayInterval = setInterval(nextTab, autoplaySpeed);
+          if (progressBar) {
+            progressBar.style.animation = 'progressFill ' + autoplaySpeed + 'ms linear forwards';
+          }
+        }
+      }
+
+      function stopAutoplay() {
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+          autoplayInterval = null;
+        }
+        if (progressBar) {
+          progressBar.style.animationPlayState = 'paused';
+        }
+      }
+
+      // Tab click handlers
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          const index = parseInt(tab.dataset.tabIndex);
+          setActiveTab(index);
+          stopAutoplay();
+          startAutoplay();
+        });
+      });
+
+      // Pill click handlers
+      pills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          const index = parseInt(pill.dataset.tabIndex);
+          setActiveTab(index);
+          stopAutoplay();
+          startAutoplay();
+        });
+      });
+
+      // Pause on hover (desktop)
+      const mediaArea = container.querySelector('.how-it-works-tabs__media');
+      const tabsArea = container.querySelector('.how-it-works-tabs__tabs');
+
+      [mediaArea, tabsArea].forEach(function(area) {
+        if (area) {
+          area.addEventListener('mouseenter', function() {
+            isPaused = true;
+            stopAutoplay();
+          });
+
+          area.addEventListener('mouseleave', function() {
+            isPaused = false;
+            startAutoplay();
+          });
+        }
+      });
+
+      // Touch swipe support for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      if (mediaArea) {
+        mediaArea.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        mediaArea.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+      }
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            // Swipe left - next
+            const next = (currentIndex + 1) % tabs.length;
+            setActiveTab(next);
+          } else {
+            // Swipe right - previous
+            const prev = (currentIndex - 1 + tabs.length) % tabs.length;
+            setActiveTab(prev);
+          }
+          stopAutoplay();
+          startAutoplay();
+        }
+      }
+
+      // Start autoplay
+      startAutoplay();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "How It Works - Tabs",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "How It Works",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "default": "From photo to figurine in four simple steps",
+      "label": "Subheading"
+    },
+    {
+      "type": "header",
+      "content": "Autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-rotate tabs",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "min": 3000,
+      "max": 9500,
+      "step": 500,
+      "unit": "ms",
+      "label": "Rotation speed",
+      "default": 5000
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "media_position",
+      "options": [
+        { "value": "left", "label": "Media on left" },
+        { "value": "right", "label": "Media on right" }
+      ],
+      "default": "left",
+      "label": "Media position (desktop)"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Step Title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Description of this step in the process.</p>",
+          "label": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Media"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Recommended: 800x600px or larger"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL (MP4)",
+          "info": "Use a direct link to an MP4 file. Takes priority over image."
+        },
+        {
+          "type": "header",
+          "content": "Fallback Icon"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            { "value": "upload", "label": "Upload" },
+            { "value": "design", "label": "Design/3D" },
+            { "value": "print", "label": "Print" },
+            { "value": "ship", "label": "Ship" },
+            { "value": "check", "label": "Checkmark" }
+          ],
+          "default": "check",
+          "label": "Icon",
+          "info": "Only shown if no image or video is set"
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Icon background color",
+          "default": "#4A90D9"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works - Tabs",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Send Your Photos",
+            "description": "<p>Share clear photos of the person or couple you want to immortalize. Our team reviews each submission to ensure we can create the perfect likeness.</p>",
+            "icon": "upload",
+            "icon_color": "#4A90D9"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Review Designs",
+            "description": "<p>We send you multiple 3D render options to choose from. Request unlimited revisions until you're completely satisfied with the design.</p>",
+            "icon": "design",
+            "icon_color": "#E85D75"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "We Print",
+            "description": "<p>Once approved, we 3D print your figurine in-house using premium materials. Each piece is hand-finished for gallery-quality results.</p>",
+            "icon": "print",
+            "icon_color": "#50C878"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Fast Shipping",
+            "description": "<p>Your finished figurine ships within 48 hours of approval. Carefully packaged to arrive in perfect condition at your doorstep.</p>",
+            "icon": "ship",
+            "icon_color": "#9B59B6"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
