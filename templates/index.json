@@ -1,8 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero-responsive",
       "settings": {
+        "desktop_image": "shopify://shop_images/Gemini_Generated_Image_gsx2vjgsx2vjgsx2.png",
+        "mobile_image": "shopify://shop_images/WhatsApp_Image_2026-01-19_at_7.58.54_PM.jpg",
         "desktop_height": 85,
         "mobile_height": 50,
         "show_overlay": false,
@@ -38,7 +49,10 @@
           }
         }
       },
-      "block_order": ["couple", "single"],
+      "block_order": [
+        "couple",
+        "single"
+      ],
       "settings": {
         "padding_top": 52,
         "padding_bottom": 52
@@ -52,8 +66,9 @@
           "settings": {
             "title": "Send Your Photos",
             "description": "<p>Share clear photos showing faces of the person or couple you want to immortalize.</p>",
+            "video_url": "",
             "icon": "upload",
-            "icon_color": "#4A90D9"
+            "icon_color": "#4a90d9"
           }
         },
         "step_2": {
@@ -61,8 +76,9 @@
           "settings": {
             "title": "Review Designs",
             "description": "<p>We create and send you multiple 3D render options to choose from.</p>",
+            "video_url": "",
             "icon": "design",
-            "icon_color": "#E85D75"
+            "icon_color": "#e85d75"
           }
         },
         "step_3": {
@@ -70,8 +86,9 @@
           "settings": {
             "title": "We 3D Print",
             "description": "<p>Once you approve, we 3D print your figurine 100% in-house with premium materials.</p>",
+            "video_url": "",
             "icon": "print",
-            "icon_color": "#50C878"
+            "icon_color": "#50c878"
           }
         },
         "step_4": {
@@ -79,12 +96,18 @@
           "settings": {
             "title": "Fast Shipping",
             "description": "<p>Your finished figurine ships within 48 hours of approval.</p>",
+            "video_url": "",
             "icon": "ship",
-            "icon_color": "#9B59B6"
+            "icon_color": "#9b59b6"
           }
         }
       },
-      "block_order": ["step_1", "step_2", "step_3", "step_4"],
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
       "settings": {
         "heading": "How It Works",
         "heading_size": "h1",
@@ -103,33 +126,56 @@
         "img_1": {
           "type": "image",
           "settings": {
+            "caption": "",
             "featured": true
           }
         },
         "img_2": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": "",
+            "featured": false
+          }
         },
         "img_3": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": "",
+            "featured": false
+          }
         },
         "video_1": {
           "type": "video",
           "settings": {
-            "caption": "3D Printing Timelapse"
+            "video_url": "",
+            "youtube_url": "",
+            "caption": "3D Printing Timelapse",
+            "featured": false
           }
         },
         "img_4": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": "",
+            "featured": false
+          }
         },
         "img_5": {
           "type": "image",
-          "settings": {}
+          "settings": {
+            "caption": "",
+            "featured": false
+          }
         }
       },
-      "block_order": ["img_1", "img_2", "img_3", "video_1", "img_4", "img_5"],
+      "block_order": [
+        "img_1",
+        "img_2",
+        "img_3",
+        "video_1",
+        "img_4",
+        "img_5"
+      ],
       "settings": {
         "heading": "Our Creations",
         "heading_size": "h1",
@@ -137,6 +183,61 @@
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60
+      }
+    },
+    "logo_bar": {
+      "type": "logo-bar",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "name": "Google",
+            "link": ""
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "name": "Microsoft",
+            "link": ""
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "name": "Apple",
+            "link": ""
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "name": "Amazon",
+            "link": ""
+          }
+        },
+        "logo_5": {
+          "type": "logo",
+          "settings": {
+            "name": "Meta",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4",
+        "logo_5"
+      ],
+      "settings": {
+        "heading": "Trusted by people at",
+        "heading_size": "h2",
+        "logo_height": 40,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "testimonials": {
@@ -170,56 +271,17 @@
           }
         }
       },
-      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h1",
-        "bg_color": "#F9FAFB",
+        "bg_color": "#f9fafb",
         "padding_top": 52,
         "padding_bottom": 52
-      }
-    },
-    "logo_bar": {
-      "type": "logo-bar",
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {
-            "name": "Google"
-          }
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {
-            "name": "Microsoft"
-          }
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {
-            "name": "Apple"
-          }
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {
-            "name": "Amazon"
-          }
-        },
-        "logo_5": {
-          "type": "logo",
-          "settings": {
-            "name": "Meta"
-          }
-        }
-      },
-      "block_order": ["logo_1", "logo_2", "logo_3", "logo_4", "logo_5"],
-      "settings": {
-        "heading": "Trusted by people at",
-        "logo_height": 40,
-        "color_scheme": "scheme-1",
-        "padding_top": 40,
-        "padding_bottom": 40
       }
     },
     "faq": {
@@ -230,7 +292,8 @@
           "settings": {
             "heading": "How long does it take to receive my figurine?",
             "icon": "stopwatch",
-            "row_content": "<p>After you approve the 3D render, your figurine ships within 48 hours. Typical delivery is 5-7 business days depending on your location.</p>"
+            "row_content": "<p>After you approve the 3D render, your figurine ships within 48 hours. Typical delivery is 5-7 business days depending on your location.</p>",
+            "page": ""
           }
         },
         "faq_2": {
@@ -238,7 +301,8 @@
           "settings": {
             "heading": "What kind of photos should I send?",
             "icon": "eye",
-            "row_content": "<p>Send clear, well-lit photos showing the face(s) from the front. Multiple angles help us capture likeness better. Avoid blurry or heavily filtered photos.</p>"
+            "row_content": "<p>Send clear, well-lit photos showing the face(s) from the front. Multiple angles help us capture likeness better. Avoid blurry or heavily filtered photos.</p>",
+            "page": ""
           }
         },
         "faq_3": {
@@ -246,7 +310,8 @@
           "settings": {
             "heading": "What size are the figurines?",
             "icon": "ruler",
-            "row_content": "<p>Our standard figurines are approximately 6 inches tall. We also offer larger sizes upon request. Contact us for custom sizing options.</p>"
+            "row_content": "<p>Our standard figurines are approximately 6 inches tall. We also offer larger sizes upon request. Contact us for custom sizing options.</p>",
+            "page": ""
           }
         },
         "faq_4": {
@@ -254,7 +319,8 @@
           "settings": {
             "heading": "Can I request changes to the design?",
             "icon": "chat_bubble",
-            "row_content": "<p>Absolutely! We include up to 2 rounds of revisions with every order. We want you to be 100% happy with your figurine before we print it.</p>"
+            "row_content": "<p>Absolutely! We include up to 2 rounds of revisions with every order. We want you to be 100% happy with your figurine before we print it.</p>",
+            "page": ""
           }
         },
         "faq_5": {
@@ -262,7 +328,8 @@
           "settings": {
             "heading": "What material is used for the figurines?",
             "icon": "check_mark",
-            "row_content": "<p>We use premium PLA+ filament, which is durable, eco-friendly, and provides excellent detail. All figurines are hand-painted and finished in-house.</p>"
+            "row_content": "<p>We use premium PLA+ filament, which is durable, eco-friendly, and provides excellent detail. All figurines are hand-painted and finished in-house.</p>",
+            "page": ""
           }
         },
         "faq_6": {
@@ -270,19 +337,27 @@
           "settings": {
             "heading": "Do you ship internationally?",
             "icon": "plane",
-            "row_content": "<p>Yes! We ship worldwide. International shipping typically takes 7-14 business days. Shipping costs are calculated at checkout based on your location.</p>"
+            "row_content": "<p>Yes! We ship worldwide. International shipping typically takes 7-14 business days. Shipping costs are calculated at checkout based on your location.</p>",
+            "page": ""
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
       "settings": {
         "caption": "",
         "heading": "Frequently Asked Questions",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
-        "color_scheme": "scheme-1",
         "container_color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
