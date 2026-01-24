@@ -100,6 +100,7 @@
           "settings": {
             "title": "Fast Shipping",
             "description": "<p>Your finished figurine ships within 48 hours of approval.</p>",
+            "image": "shopify://shop_images/Untitled_4.png",
             "video_url": "",
             "icon": "ship",
             "icon_color": "#9b59b6"
