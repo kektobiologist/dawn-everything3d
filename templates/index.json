@@ -68,6 +68,7 @@
           "settings": {
             "title": "Send Your Photos",
             "description": "<p>Share clear photos showing faces of the person or couple you want to immortalize.</p>",
+            "image": "shopify://shop_images/crop_screenshot.jpg",
             "video_url": "",
             "icon": "upload",
             "icon_color": "#4a90d9"
