@@ -4,15 +4,15 @@
       "type": "hero-responsive",
       "settings": {
         "desktop_height": 85,
-        "mobile_height": 75,
-        "show_overlay": true,
+        "mobile_height": 50,
+        "show_overlay": false,
         "overlay_opacity": 25,
-        "heading": "",
-        "heading_size": "h0",
+        "heading": "Turn your favorite moments into lasting memories",
+        "desktop_heading_size": "h0",
+        "mobile_heading_size": "h2",
         "subheading": "",
-        "button_label": "",
-        "button_link": "",
-        "content_position": "bottom-center",
+        "button_label": "Create Your Figurine",
+        "button_link": "shopify://collections/mini-me-figurine",
         "color_scheme": "scheme-1"
       }
     },
@@ -40,11 +40,6 @@
       },
       "block_order": ["couple", "single"],
       "settings": {
-        "tagline": "Turn your favorite moments into lasting memories",
-        "tagline_size": "h2",
-        "main_button_label": "Create Your Figurine",
-        "main_button_link": "shopify://collections/mini-me-figurine",
-        "color_scheme": "scheme-1",
         "padding_top": 52,
         "padding_bottom": 52
       }

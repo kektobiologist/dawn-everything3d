@@ -14,27 +14,8 @@
   }
 {%- endstyle -%}
 
-<div class="cta-cards color-{{ section.settings.color_scheme }} gradient">
+<div class="cta-cards gradient">
   <div class="page-width section-{{ section.id }}-padding">
-    {%- if section.settings.tagline != blank -%}
-      <div class="cta-cards__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <p class="cta-cards__tagline {{ section.settings.tagline_size }}">
-          {{ section.settings.tagline }}
-        </p>
-      </div>
-    {%- endif -%}
-
-    {%- if section.settings.main_button_label != blank -%}
-      <div class="cta-cards__main-cta{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        <a
-          href="{{ section.settings.main_button_link }}"
-          class="button button--primary button--large"
-        >
-          {{ section.settings.main_button_label }}
-        </a>
-      </div>
-    {%- endif -%}
-
     {%- if section.blocks.size > 0 -%}
       <div class="cta-cards__grid cta-cards__grid--{{ section.blocks.size }}-items{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {%- for block in section.blocks -%}
@@ -91,53 +72,6 @@
     "groups": ["header", "footer"]
   },
   "settings": [
-    {
-      "type": "header",
-      "content": "Tagline"
-    },
-    {
-      "type": "textarea",
-      "id": "tagline",
-      "label": "Tagline",
-      "default": "Create your perfect mini figurine"
-    },
-    {
-      "type": "select",
-      "id": "tagline_size",
-      "options": [
-        { "value": "h3", "label": "Small" },
-        { "value": "h2", "label": "Medium" },
-        { "value": "h1", "label": "Large" },
-        { "value": "h0", "label": "Extra large" }
-      ],
-      "default": "h2",
-      "label": "Tagline size"
-    },
-    {
-      "type": "header",
-      "content": "Main Button"
-    },
-    {
-      "type": "text",
-      "id": "main_button_label",
-      "label": "Button label",
-      "default": "Order Now"
-    },
-    {
-      "type": "url",
-      "id": "main_button_link",
-      "label": "Button link"
-    },
-    {
-      "type": "header",
-      "content": "Section Style"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "scheme-1"
-    },
     {
       "type": "range",
       "id": "padding_top",

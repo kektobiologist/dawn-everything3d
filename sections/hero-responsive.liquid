@@ -6,68 +6,51 @@
     --hero-height-desktop: {{ section.settings.desktop_height }}vh;
   }
 
-  #Hero-{{ section.id }}::after {
+  #Hero-{{ section.id }} .hero-responsive__media::after {
     opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
   }
 {%- endstyle -%}
 
 <div id="Hero-{{ section.id }}" class="hero-responsive{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-  {%- if section.settings.mobile_image != blank -%}
-    <div class="hero-responsive__media hero-responsive__media--mobile">
-      {{
-        section.settings.mobile_image
-        | image_url: width: 1500
-        | image_tag:
-          widths: '375, 550, 750, 1000, 1500',
-          sizes: '100vw',
-          loading: 'eager',
-          fetchpriority: 'high',
-          class: 'hero-responsive__image'
-      }}
+  {%- comment -%} Mobile: stacked layout - image then content below {%- endcomment -%}
+  <div class="hero-responsive__mobile">
+    <div class="hero-responsive__media-wrapper">
+      {%- if section.settings.mobile_image != blank -%}
+        {{
+          section.settings.mobile_image
+          | image_url: width: 1500
+          | image_tag:
+            widths: '375, 550, 750, 1000, 1500',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'hero-responsive__image'
+        }}
+      {%- elsif section.settings.desktop_image != blank -%}
+        {{
+          section.settings.desktop_image
+          | image_url: width: 1500
+          | image_tag:
+            widths: '375, 550, 750, 1000, 1500',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'hero-responsive__image'
+        }}
+      {%- else -%}
+        <div class="hero-responsive__placeholder">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.show_overlay -%}
+        <div class="hero-responsive__overlay"></div>
+      {%- endif -%}
     </div>
-  {%- endif -%}
 
-  {%- if section.settings.desktop_image != blank -%}
-    <div class="hero-responsive__media hero-responsive__media--desktop">
-      {{
-        section.settings.desktop_image
-        | image_url: width: 3840
-        | image_tag:
-          widths: '1000, 1500, 2000, 2500, 3000, 3840',
-          sizes: '100vw',
-          loading: 'eager',
-          fetchpriority: 'high',
-          class: 'hero-responsive__image'
-      }}
-    </div>
-  {%- elsif section.settings.mobile_image != blank -%}
-    <div class="hero-responsive__media hero-responsive__media--desktop">
-      {{
-        section.settings.mobile_image
-        | image_url: width: 3840
-        | image_tag:
-          widths: '1000, 1500, 2000, 2500, 3000, 3840',
-          sizes: '100vw',
-          loading: 'eager',
-          fetchpriority: 'high',
-          class: 'hero-responsive__image'
-      }}
-    </div>
-  {%- else -%}
-    <div class="hero-responsive__media hero-responsive__media--desktop hero-responsive__placeholder">
-      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    </div>
-  {%- endif -%}
-
-  {%- if section.settings.show_overlay -%}
-    <div class="hero-responsive__overlay"></div>
-  {%- endif -%}
-
-  {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.button_label != blank -%}
-    <div class="hero-responsive__content hero-responsive__content--{{ section.settings.content_position }}">
-      <div class="hero-responsive__content-inner color-{{ section.settings.color_scheme }}">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.button_label != blank -%}
+      <div class="hero-responsive__content-mobile color-{{ section.settings.color_scheme }}">
         {%- if section.settings.heading != blank -%}
-          <h1 class="hero-responsive__heading {{ section.settings.heading_size }}">
+          <h1 class="hero-responsive__heading hero-responsive__heading--{{ section.settings.mobile_heading_size }}">
             {{ section.settings.heading }}
           </h1>
         {%- endif -%}
@@ -87,8 +70,71 @@
           </a>
         {%- endif -%}
       </div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Desktop: image with overlaid content on right {%- endcomment -%}
+  <div class="hero-responsive__desktop">
+    <div class="hero-responsive__media">
+      {%- if section.settings.desktop_image != blank -%}
+        {{
+          section.settings.desktop_image
+          | image_url: width: 3840
+          | image_tag:
+            widths: '1000, 1500, 2000, 2500, 3000, 3840',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'hero-responsive__image'
+        }}
+      {%- elsif section.settings.mobile_image != blank -%}
+        {{
+          section.settings.mobile_image
+          | image_url: width: 3840
+          | image_tag:
+            widths: '1000, 1500, 2000, 2500, 3000, 3840',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'hero-responsive__image'
+        }}
+      {%- else -%}
+        <div class="hero-responsive__placeholder">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.show_overlay -%}
+        <div class="hero-responsive__overlay"></div>
+      {%- endif -%}
     </div>
-  {%- endif -%}
+
+    {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.button_label != blank -%}
+      <div class="hero-responsive__content-desktop">
+        <div class="hero-responsive__content-inner">
+          {%- if section.settings.heading != blank -%}
+            <h1 class="hero-responsive__heading hero-responsive__heading--{{ section.settings.desktop_heading_size }}">
+              {{ section.settings.heading }}
+            </h1>
+          {%- endif -%}
+
+          {%- if section.settings.subheading != blank -%}
+            <p class="hero-responsive__subheading">
+              {{ section.settings.subheading }}
+            </p>
+          {%- endif -%}
+
+          {%- if section.settings.button_label != blank -%}
+            <a
+              href="{{ section.settings.button_link }}"
+              class="button button--primary hero-responsive__button"
+            >
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
 </div>
 
 {% schema %}
@@ -129,12 +175,12 @@
     {
       "type": "range",
       "id": "mobile_height",
-      "min": 50,
-      "max": 100,
+      "min": 30,
+      "max": 80,
       "step": 5,
       "unit": "vh",
-      "label": "Mobile height",
-      "default": 70
+      "label": "Mobile image height",
+      "default": 50
     },
     {
       "type": "header",
@@ -143,7 +189,7 @@
     {
       "type": "checkbox",
       "id": "show_overlay",
-      "default": true,
+      "default": false,
       "label": "Show overlay"
     },
     {
@@ -167,7 +213,7 @@
     },
     {
       "type": "select",
-      "id": "heading_size",
+      "id": "desktop_heading_size",
       "options": [
         { "value": "h2", "label": "Small" },
         { "value": "h1", "label": "Medium" },
@@ -175,7 +221,19 @@
         { "value": "hxl", "label": "Extra large" }
       ],
       "default": "h0",
-      "label": "Heading size"
+      "label": "Desktop heading size"
+    },
+    {
+      "type": "select",
+      "id": "mobile_heading_size",
+      "options": [
+        { "value": "h3", "label": "Extra small" },
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h2",
+      "label": "Mobile heading size"
     },
     {
       "type": "text",
@@ -191,23 +249,6 @@
       "type": "url",
       "id": "button_link",
       "label": "Button link"
-    },
-    {
-      "type": "select",
-      "id": "content_position",
-      "options": [
-        { "value": "top-left", "label": "Top left" },
-        { "value": "top-center", "label": "Top center" },
-        { "value": "top-right", "label": "Top right" },
-        { "value": "middle-left", "label": "Middle left" },
-        { "value": "middle-center", "label": "Middle center" },
-        { "value": "middle-right", "label": "Middle right" },
-        { "value": "bottom-left", "label": "Bottom left" },
-        { "value": "bottom-center", "label": "Bottom center" },
-        { "value": "bottom-right", "label": "Bottom right" }
-      ],
-      "default": "middle-center",
-      "label": "Content position"
     },
     {
       "type": "color_scheme",
