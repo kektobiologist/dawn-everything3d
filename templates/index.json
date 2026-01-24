@@ -33,8 +33,9 @@
         "couple": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/couple-nobg.png",
             "title": "Couple Figurine",
-            "price": "Starting at $149",
+            "price": "Starting at Rs. 6990",
             "button_label": "Order Now",
             "link": "shopify://collections/mini-me-figurine"
           }
@@ -42,8 +43,9 @@
         "single": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/single-nobg.png",
             "title": "Single Figurine",
-            "price": "Starting at $99",
+            "price": "Starting at Rs. 2990",
             "button_label": "Order Now",
             "link": "shopify://collections/mini-me-figurine"
           }
