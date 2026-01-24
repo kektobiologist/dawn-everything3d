@@ -166,32 +166,42 @@
 .how-it-works-tabs__placeholder {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   background: linear-gradient(135deg, rgba(var(--color-foreground), 0.03) 0%, rgba(var(--color-foreground), 0.08) 100%);
 }
 
 .how-it-works-tabs__placeholder-icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 24px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.how-it-works-tabs__placeholder-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 @media screen and (min-width: 750px) {
   .how-it-works-tabs__placeholder-icon {
-    width: 140px;
-    height: 140px;
-    border-radius: 32px;
+    bottom: 16px;
+    right: 16px;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
   }
 
   .how-it-works-tabs__placeholder-icon svg {
-    width: 64px;
-    height: 64px;
+    width: 26px;
+    height: 26px;
   }
 }
 
