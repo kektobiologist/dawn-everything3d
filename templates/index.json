@@ -196,14 +196,16 @@
         "logo_1": {
           "type": "logo",
           "settings": {
-            "name": "Google",
+            "logo": "shopify://shop_images/Atlassian_mark_brand_RGB.png",
+            "name": "Atlassian",
             "link": ""
           }
         },
         "logo_2": {
           "type": "logo",
           "settings": {
-            "name": "Microsoft",
+            "logo": "shopify://shop_images/adobe-logo2.png",
+            "name": "Adobe",
             "link": ""
           }
         },
@@ -238,7 +240,7 @@
       ],
       "settings": {
         "heading": "Trusted by people at",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "logo_height": 40,
         "color_scheme": "scheme-1",
         "padding_top": 40,
