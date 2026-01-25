@@ -128,9 +128,26 @@
     "gallery": {
       "type": "gallery-grid",
       "blocks": {
+        "image_pg4Exy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2026-01-25_at_9.50.52_AM.jpg",
+            "caption": "",
+            "featured": false
+          }
+        },
+        "image_HHxk9H": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-01-25_at_12.14.27_AM.png",
+            "caption": "",
+            "featured": false
+          }
+        },
         "img_1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/5871e391-ccca-436d-9d6c-16c37dfff395.png",
             "caption": "",
             "featured": true
           }
@@ -138,6 +155,7 @@
         "img_2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/IMG_4666_dc753655-afea-437f-808a-b362aa49b0cb.heic",
             "caption": "",
             "featured": false
           }
@@ -145,6 +163,7 @@
         "img_3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/raymurray.jpg",
             "caption": "",
             "featured": false
           }
@@ -152,15 +171,17 @@
         "video_1": {
           "type": "video",
           "settings": {
-            "video_url": "",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/94fb981022bd40a492638e7a9b09a444.mp4",
             "youtube_url": "",
-            "caption": "3D Printing Timelapse",
+            "poster": "shopify://shop_images/WhatsApp_Image_2026-01-19_at_7.58.54_PM.jpg",
+            "caption": "3D Printed couple figurine",
             "featured": false
           }
         },
         "img_4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-01-25_at_9.56.53_AM.png",
             "caption": "",
             "featured": false
           }
@@ -168,12 +189,15 @@
         "img_5": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Untitled_5.png",
             "caption": "",
             "featured": false
           }
         }
       },
       "block_order": [
+        "image_pg4Exy",
+        "image_HHxk9H",
         "img_1",
         "img_2",
         "img_3",
