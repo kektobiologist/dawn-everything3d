@@ -220,7 +220,7 @@
         "logo_1": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Atlassian_mark_brand_RGB.png",
+            "logo": "shopify://shop_images/Atlassian_logo_brand_RGB_2x_1d586625-ee45-4cd1-9bdb-44a04c600054.png",
             "name": "Atlassian",
             "link": ""
           }
@@ -228,7 +228,7 @@
         "logo_2": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/adobe-logo2.png",
+            "logo": "shopify://shop_images/Adobe_Corporate_logo.png",
             "name": "Adobe",
             "link": ""
           }
@@ -236,21 +236,24 @@
         "logo_3": {
           "type": "logo",
           "settings": {
-            "name": "Apple",
+            "logo": "shopify://shop_images/hyperbots.png",
+            "name": "Hyperbots",
             "link": ""
           }
         },
         "logo_4": {
           "type": "logo",
           "settings": {
-            "name": "Amazon",
+            "logo": "shopify://shop_images/unilever.png",
+            "name": "Unilever",
             "link": ""
           }
         },
         "logo_5": {
           "type": "logo",
           "settings": {
-            "name": "Meta",
+            "logo": "shopify://shop_images/dashverse.png",
+            "name": "Dashverse",
             "link": ""
           }
         }
@@ -265,7 +268,6 @@
       "settings": {
         "heading": "Trusted by people at",
         "heading_size": "h1",
-        "logo_height": 40,
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 40
@@ -315,7 +317,6 @@
         "padding_bottom": 52
       }
     },
-
     "faq": {
       "type": "collapsible-content",
       "blocks": {
