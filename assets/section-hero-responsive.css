@@ -169,6 +169,14 @@
 
 .hero-responsive__content-inner .hero-responsive__button {
   margin-top: 0.5rem;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.hero-responsive__content-inner .hero-responsive__button:hover {
+  background: #fff;
+  color: #000;
 }
 
 /* ===========================================
