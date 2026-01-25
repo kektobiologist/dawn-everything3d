@@ -1304,6 +1304,20 @@
     "name": "t:settings_schema.social-media.name",
     "settings": [
       {
+        "type": "header",
+        "content": "Social sharing image"
+      },
+      {
+        "type": "image_picker",
+        "id": "og_image",
+        "label": "Default sharing image",
+        "info": "Shown when your site is shared on WhatsApp, Facebook, Twitter, etc. Recommended size: 1200x630px."
+      },
+      {
+        "type": "header",
+        "content": "Social accounts"
+      },
+      {
         "type": "text",
         "id": "social_facebook_link",
         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
