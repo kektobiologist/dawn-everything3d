@@ -277,27 +277,27 @@
         "testimonial_1": {
           "type": "testimonial",
           "settings": {
-            "quote": "The figurine exceeded our expectations! It looks exactly like us. Perfect anniversary gift.",
-            "author_name": "Sarah & Mike",
-            "author_title": "Anniversary Gift",
+            "quote": "I had an amazing experience working with EVERYTHING 3D! They created personalized 3D miniature figurines for my team, and the results were absolutely delightful. The figurines were super cute, unique, and of excellent quality—my team loved them!💙",
+            "author_name": "Somya Singh",
+            "author_title": "Manager, Unilever",
             "stars": 5
           }
         },
         "testimonial_2": {
           "type": "testimonial",
           "settings": {
-            "quote": "Amazing quality and fast delivery. My parents loved their figurine!",
-            "author_name": "Jennifer L.",
-            "author_title": "Verified Buyer",
+            "quote": "The team has been our go to for the past two years for goodies for our visitors in a huge finance and accounting conference in New York and Vegas. Everything arrives on time, everything arrives beautifully packed.",
+            "author_name": "Niyati Chaya",
+            "author_title": "Cofounder, VP AI, Hyperbots",
             "stars": 5
           }
         },
         "testimonial_3": {
           "type": "testimonial",
           "settings": {
-            "quote": "The attention to detail is incredible. Highly recommend for unique gifts!",
-            "author_name": "David K.",
-            "author_title": "Verified Buyer",
+            "quote": "Everything3D managed our souvenirs for multiple events for us at Dashverse. Everyone loved the prints and almost everyone see it everyday at their homes increasing the visibility of Dashverse!",
+            "author_name": "Soumyadeep Mukherjee",
+            "author_title": "CTO, Dashverse",
             "stars": 5
           }
         }
@@ -315,6 +315,7 @@
         "padding_bottom": 52
       }
     },
+
     "faq": {
       "type": "collapsible-content",
       "blocks": {
@@ -323,7 +324,7 @@
           "settings": {
             "heading": "How long does it take to receive my figurine?",
             "icon": "stopwatch",
-            "row_content": "<p>After you approve the 3D render, your figurine ships within 48 hours. Typical delivery is 5-7 business days depending on your location.</p>",
+            "row_content": "<p>After you approve the 3D render, your figurine ships within 48 hours. Typical delivery is 2-5 business days from shipping depending on your location.</p>",
             "page": ""
           }
         },
@@ -341,16 +342,16 @@
           "settings": {
             "heading": "What size are the figurines?",
             "icon": "ruler",
-            "row_content": "<p>Our standard figurines are approximately 6 inches tall. We also offer larger sizes upon request. Contact us for custom sizing options.</p>",
+            "row_content": "<p>Our standard figurines are approximately 13cm tall. We also offer larger sizes upon request. Contact us for custom sizing options.</p>",
             "page": ""
           }
         },
         "faq_4": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I request changes to the design?",
+            "heading": "Can I request customizations to the design?",
             "icon": "chat_bubble",
-            "row_content": "<p>Absolutely! We include up to 2 rounds of revisions with every order. We want you to be 100% happy with your figurine before we print it.</p>",
+            "row_content": "<p>Absolutely! Along with the custom text at the base, we can include other design requests too. Contact us to see what’s possible.</p>",
             "page": ""
           }
         },
@@ -366,9 +367,9 @@
         "faq_6": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do you ship internationally?",
-            "icon": "plane",
-            "row_content": "<p>Yes! We ship worldwide. International shipping typically takes 7-14 business days. Shipping costs are calculated at checkout based on your location.</p>",
+            "heading": "Are there any limitations to the design?",
+            "icon": "question_mark",
+            "row_content": "<p>Yes — since your figurine is fully 3D printed in-house, we can only use <strong>solid colors</strong> (no gradients or photo-like shading). Each figurine is typically limited to <strong>up to 5 colors</strong> for the cleanest and best-looking finish.</p>",
             "page": ""
           }
         }

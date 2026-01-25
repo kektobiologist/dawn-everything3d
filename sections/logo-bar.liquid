@@ -12,11 +12,6 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  .logo-bar-{{ section.id }} .logo-bar__logo img,
-  .logo-bar-{{ section.id }} .logo-bar__logo svg {
-    max-height: {{ section.settings.logo_height }}px;
-  }
 {%- endstyle -%}
 
 <div class="logo-bar logo-bar-{{ section.id }} color-{{ section.settings.color_scheme }} gradient">
@@ -84,16 +79,6 @@
       ],
       "default": "h2",
       "label": "Heading size"
-    },
-    {
-      "type": "range",
-      "id": "logo_height",
-      "min": 20,
-      "max": 80,
-      "step": 5,
-      "unit": "px",
-      "label": "Logo height",
-      "default": 40
     },
     {
       "type": "color_scheme",
