@@ -174,20 +174,6 @@
         </div>
 
         <div class="mini-me-field">
-          <label class="mini-me-label" for="MiniMe-WhatsApp-{{ section.id }}"
-            >Enter Whatsapp Number <span class="required">*</span></label
-          >
-          <input
-            type="tel"
-            id="MiniMe-WhatsApp-{{ section.id }}"
-            name="properties[WhatsApp Number]"
-            form="{{ product_form_id }}"
-            class="mini-me-input"
-            required
-          >
-        </div>
-
-        <div class="mini-me-field">
           <label class="mini-me-label" for="MiniMe-BaseText-{{ section.id }}"
             >Text to Include in Base</label
           >
@@ -198,6 +184,20 @@
             form="{{ product_form_id }}"
             class="mini-me-input"
             placeholder="e.g., Happy Birthday John!"
+          >
+        </div>
+
+        <div class="mini-me-field">
+          <label class="mini-me-label" for="MiniMe-WhatsApp-{{ section.id }}"
+            >Enter Whatsapp Number <span class="required">*</span></label
+          >
+          <input
+            type="tel"
+            id="MiniMe-WhatsApp-{{ section.id }}"
+            name="properties[WhatsApp Number]"
+            form="{{ product_form_id }}"
+            class="mini-me-input"
+            required
           >
         </div>
 
