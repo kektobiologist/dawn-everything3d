@@ -187,6 +187,20 @@
           >
         </div>
 
+        <div class="mini-me-field">
+          <label class="mini-me-label" for="MiniMe-BaseText-{{ section.id }}"
+            >Text to Include in Base</label
+          >
+          <input
+            type="text"
+            id="MiniMe-BaseText-{{ section.id }}"
+            name="properties[Text for Base]"
+            form="{{ product_form_id }}"
+            class="mini-me-input"
+            placeholder="e.g., Happy Birthday John!"
+          >
+        </div>
+
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
