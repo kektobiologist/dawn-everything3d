@@ -130,46 +130,127 @@
             border-color: #000;
             outline: none;
           }
+          .file-upload-container.uploading {
+            border-color: #1967d2;
+            background-color: #f0f7ff;
+          }
+          .file-upload-container.uploaded {
+            border-color: #34a853;
+            background-color: #e6f4ea;
+          }
+          .file-upload-container.error {
+            border-color: #ea4335;
+            background-color: #fce8e6;
+          }
         </style>
 
         <div class="mini-me-field">
           <label class="mini-me-label" for="MiniMe-Photos-{{ section.id }}"
             >Upload Photo(s) <span class="required">*</span></label
           >
-          <div class="file-upload-container">
+          <div class="file-upload-container" id="file-upload-container-{{ section.id }}">
             <input
               type="file"
               id="MiniMe-Photos-{{ section.id }}"
-              name="properties[Photos]"
-              form="{{ product_form_id }}"
               class="file-upload-input"
               multiple
               accept="image/*"
+            >
+            <input
+              type="hidden"
+              id="MiniMe-PhotoURLs-{{ section.id }}"
+              name="properties[Photo URLs]"
+              form="{{ product_form_id }}"
               required
             >
             <div class="file-upload-content">
-              <span class="file-upload-btn">Choose file(s)</span>
+              <span class="file-upload-btn" id="file-upload-btn-{{ section.id }}">Choose file(s)</span>
               <span class="file-upload-text" id="file-upload-text-{{ section.id }}">or drop file to upload</span>
             </div>
           </div>
           <script>
-            document.getElementById('MiniMe-Photos-{{ section.id }}').addEventListener('change', function (e) {
-              var fileName = '';
-              if (this.files && this.files.length > 1) {
-                fileName = (this.getAttribute('data-multiple-caption') || '{count} files selected').replace(
-                  '{count}',
-                  this.files.length
-                );
-              } else {
-                fileName = e.target.value.split('\\').pop();
+            (function() {
+              const UPLOAD_ENDPOINT = 'https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-5030911a-7b37-4b91-beb5-1004f6713598/default/upload-url';
+              const fileInput = document.getElementById('MiniMe-Photos-{{ section.id }}');
+              const hiddenInput = document.getElementById('MiniMe-PhotoURLs-{{ section.id }}');
+              const container = document.getElementById('file-upload-container-{{ section.id }}');
+              const statusText = document.getElementById('file-upload-text-{{ section.id }}');
+              const uploadBtn = document.getElementById('file-upload-btn-{{ section.id }}');
+
+              // Use XMLHttpRequest to bypass Shopify's fetch wrapper
+              function xhrGet(url) {
+                return new Promise((resolve, reject) => {
+                  const xhr = new XMLHttpRequest();
+                  xhr.open('GET', url, true);
+                  xhr.onload = () => {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                      resolve(JSON.parse(xhr.responseText));
+                    } else {
+                      reject(new Error(xhr.statusText));
+                    }
+                  };
+                  xhr.onerror = () => reject(new Error('Network error'));
+                  xhr.send();
+                });
               }
 
-              if (fileName) {
-                document.getElementById('file-upload-text-{{ section.id }}').textContent = fileName;
-              } else {
-                document.getElementById('file-upload-text-{{ section.id }}').textContent = 'or drop file to upload';
+              function xhrPut(url, file) {
+                return new Promise((resolve, reject) => {
+                  const xhr = new XMLHttpRequest();
+                  xhr.open('PUT', url, true);
+                  xhr.setRequestHeader('Content-Type', file.type);
+                  xhr.onload = () => {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                      resolve();
+                    } else {
+                      reject(new Error(xhr.statusText));
+                    }
+                  };
+                  xhr.onerror = () => reject(new Error('Network error'));
+                  xhr.send(file);
+                });
               }
-            });
+
+              fileInput.addEventListener('change', async function(e) {
+                const files = Array.from(this.files);
+                if (!files.length) {
+                  statusText.textContent = 'or drop file to upload';
+                  container.classList.remove('uploading', 'uploaded', 'error');
+                  return;
+                }
+
+                container.classList.remove('uploaded', 'error');
+                container.classList.add('uploading');
+                statusText.textContent = 'Uploading...';
+                uploadBtn.textContent = 'Please wait';
+
+                const uploadedUrls = [];
+
+                for (let i = 0; i < files.length; i++) {
+                  const file = files[i];
+                  statusText.textContent = `Uploading ${i + 1} of ${files.length}...`;
+
+                  try {
+                    const { presignedUrl, publicUrl } = await xhrGet(`${UPLOAD_ENDPOINT}?filename=${encodeURIComponent(file.name)}`);
+                    await xhrPut(presignedUrl, file);
+                    uploadedUrls.push(publicUrl);
+                  } catch (err) {
+                    console.error('Upload failed:', err);
+                    container.classList.remove('uploading');
+                    container.classList.add('error');
+                    statusText.textContent = 'Upload failed. Please try again.';
+                    uploadBtn.textContent = 'Choose file(s)';
+                    return;
+                  }
+                }
+
+                hiddenInput.value = uploadedUrls.join(', ');
+                container.classList.remove('uploading');
+                container.classList.add('uploaded');
+                statusText.textContent = `${files.length} file(s) uploaded successfully`;
+                uploadBtn.textContent = 'Change file(s)';
+              });
+            })();
           </script>
         </div>
 
