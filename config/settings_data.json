@@ -171,6 +171,17 @@
           "button_vertical_position": "lowest",
           "greeting_message": ""
         }
+      },
+      "12104266310658676657": {
+        "type": "shopify://apps/gst-pro/blocks/app-block/dc0bf9c4-5319-4158-acba-097d71ee1adc",
+        "disabled": false,
+        "settings": {
+          "title": "Enter Details for GST Invoice:",
+          "gstin_number": "GST Number:",
+          "collect_company": false,
+          "company_name": "Company Name:",
+          "disable_styles": false
+        }
       }
     },
     "color_schemes": {
