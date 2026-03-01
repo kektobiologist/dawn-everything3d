@@ -93,28 +93,19 @@
         "step1": {
           "type": "step",
           "settings": {
-            "title": "Upload Your Photo",
-            "text": "<p>Simply upload a clear photo of yourself or your loved one. Our AI works best with front-facing photos.</p>",
-            "icon_bg_color": "#4dd0e1",
-            "custom_icon": ""
+            "title": "Upload Your Photo"
           }
         },
         "step2": {
           "type": "step",
           "settings": {
-            "title": "AI Creates 3D Model",
-            "text": "<p>Our advanced AI transforms your photo into a unique cartoon-style 3D figure, capturing your personality and features.</p>",
-            "icon_bg_color": "#ff8a65",
-            "custom_icon": ""
+            "title": "AI Creates 3D Model"
           }
         },
         "step3": {
           "type": "step",
           "settings": {
-            "title": "We Print & Ship",
-            "text": "<p>We 3D print your mini-me figurine with premium materials and ship it directly to your doorstep.</p>",
-            "icon_bg_color": "#4dd0e1",
-            "custom_icon": ""
+            "title": "We Print & Ship"
           }
         }
       },

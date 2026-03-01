@@ -1,0 +1,318 @@
+{{ 'section-about-us.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="about-us color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+
+    {%- comment -%} ===== Intro Section ===== {%- endcomment -%}
+    <div class="about-us__intro{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {%- if section.settings.heading != blank -%}
+        <h1 class="about-us__heading {{ section.settings.heading_size }}">
+          {{ section.settings.heading | escape }}
+        </h1>
+      {%- endif -%}
+
+      {%- if section.settings.blurb != blank -%}
+        <div class="about-us__blurb rte">
+          {{ section.settings.blurb }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.instagram_url != blank -%}
+        <a
+          href="{{ section.settings.instagram_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="about-us__instagram-link"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          {{ section.settings.instagram_label | default: 'Follow us on Instagram' }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ===== Team Section ===== {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="about-us__team-heading-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {%- if section.settings.team_heading != blank -%}
+          <h2 class="{{ section.settings.team_heading_size }}">
+            {{ section.settings.team_heading | escape }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.team_subheading != blank -%}
+          <p class="about-us__team-subheading">{{ section.settings.team_subheading | escape }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="about-us__team-grid">
+        {%- for block in section.blocks -%}
+          <div
+            class="team-card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {%- comment -%} Photo {%- endcomment -%}
+            <div class="team-card__image-wrapper">
+              {%- if block.settings.photo != blank -%}
+                {{
+                  block.settings.photo
+                  | image_url: width: 800
+                  | image_tag:
+                    widths: '300, 400, 600, 800',
+                    sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw',
+                    loading: 'lazy',
+                    class: ''
+                }}
+              {%- else -%}
+                <div class="team-card__placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- comment -%} Info {%- endcomment -%}
+            <div class="team-card__info">
+              {%- if block.settings.name != blank -%}
+                <h3 class="team-card__name">{{ block.settings.name | escape }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.role != blank -%}
+                <span class="team-card__role">{{ block.settings.role | escape }}</span>
+              {%- endif -%}
+
+              {%- if block.settings.bio != blank -%}
+                <p class="team-card__bio">{{ block.settings.bio | escape }}</p>
+              {%- endif -%}
+
+              {%- comment -%} Social Links {%- endcomment -%}
+              {%- if block.settings.linkedin_url != blank or block.settings.instagram_url != blank -%}
+                <div class="team-card__socials">
+                  {%- if block.settings.linkedin_url != blank -%}
+                    <a
+                      href="{{ block.settings.linkedin_url }}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="team-card__social-link"
+                      aria-label="{{ block.settings.name | escape }} on LinkedIn"
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
+                  {%- endif -%}
+
+                  {%- if block.settings.instagram_url != blank -%}
+                    <a
+                      href="{{ block.settings.instagram_url }}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="team-card__social-link"
+                      aria-label="{{ block.settings.name | escape }} on Instagram"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                      </svg>
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About Us",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Intro"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "About Us",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h0",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "blurb",
+      "default": "<p>We're a passionate team of 3D printing enthusiasts on a mission to turn your favorite moments into lasting, tangible memories. From custom figurines to corporate gifts, we bring ideas to life — one layer at a time.</p>",
+      "label": "About blurb"
+    },
+    {
+      "type": "header",
+      "content": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "text",
+      "id": "instagram_label",
+      "default": "Follow us on Instagram",
+      "label": "Instagram button text"
+    },
+    {
+      "type": "header",
+      "content": "Team section"
+    },
+    {
+      "type": "text",
+      "id": "team_heading",
+      "default": "Meet the Team",
+      "label": "Team heading"
+    },
+    {
+      "type": "select",
+      "id": "team_heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Team heading size"
+    },
+    {
+      "type": "text",
+      "id": "team_subheading",
+      "default": "The people behind your figurines",
+      "label": "Team subheading"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "default": "Team Member",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "default": "Co-founder",
+          "label": "Role / Title"
+        },
+        {
+          "type": "textarea",
+          "id": "bio",
+          "default": "A brief description of this team member's background and expertise.",
+          "label": "Short bio"
+        },
+        {
+          "type": "header",
+          "content": "Social links"
+        },
+        {
+          "type": "url",
+          "id": "linkedin_url",
+          "label": "LinkedIn URL"
+        },
+        {
+          "type": "url",
+          "id": "instagram_url",
+          "label": "Instagram URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us",
+      "blocks": [
+        { "type": "team_member" },
+        { "type": "team_member" },
+        { "type": "team_member" }
+      ]
+    }
+  ]
+}
+{% endschema %}
