@@ -15,31 +15,34 @@
         "member_1": {
           "type": "team_member",
           "settings": {
-            "name": "Team Member",
+            "photo": "shopify://shop_images/Screenshot_2026-03-01_at_8.08.57_PM.png",
+            "name": "Apoorv Saxena",
             "role": "Co-founder",
-            "bio": "A brief description of this team member's background and expertise.",
-            "linkedin_url": "",
-            "instagram_url": ""
+            "bio": "Engineer, Inception AI.\nEx Adobe Research, Google, Paypal.\nPhd in NLP from IISC Bangalore,\nBTECH CSE from BITS Pilani",
+            "linkedin_url": "https://www.linkedin.com/in/apoorvumang/",
+            "instagram_url": "https://www.instagram.com/apoorv_umang"
           }
         },
         "member_2": {
           "type": "team_member",
           "settings": {
-            "name": "Team Member",
+            "photo": "shopify://shop_images/Screenshot_2026-03-01_at_8.09.05_PM.png",
+            "name": "Juthika Saxena",
             "role": "Co-founder",
-            "bio": "A brief description of this team member's background and expertise.",
-            "linkedin_url": "",
-            "instagram_url": ""
+            "bio": "Senior Consultant, PwC.\nEx Ola, Stanza Living.\nMBA in Finance from IIM L,\nBTECH Civil from IIT Guwahati",
+            "linkedin_url": "https://www.linkedin.com/in/dasjuthika/",
+            "instagram_url": "https://www.instagram.com/juthika.saxena/"
           }
         },
         "member_3": {
           "type": "team_member",
           "settings": {
-            "name": "Team Member",
+            "photo": "shopify://shop_images/Screenshot_2026-03-01_at_8.09.11_PM.png",
+            "name": "Arpit Saxena",
             "role": "Co-founder",
-            "bio": "A brief description of this team member's background and expertise.",
-            "linkedin_url": "",
-            "instagram_url": ""
+            "bio": "Pre6 ai,\nEx YC Founder, Udaan, Google.\nBTECH CSE from\nIIT Kharagpur",
+            "linkedin_url": "https://www.linkedin.com/in/arpittarang/",
+            "instagram_url": "https://www.instagram.com/arpittarang/"
           }
         }
       },
