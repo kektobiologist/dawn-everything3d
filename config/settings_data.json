@@ -178,7 +178,7 @@
         "settings": {
           "title": "Enter Details for GST Invoice (optional):",
           "gstin_number": "GST Number:",
-          "collect_company": true,
+          "collect_company": false,
           "company_name": "Company Name:",
           "disable_styles": false
         }
