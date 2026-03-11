@@ -176,9 +176,9 @@
         "type": "shopify://apps/gst-pro/blocks/app-block/dc0bf9c4-5319-4158-acba-097d71ee1adc",
         "disabled": false,
         "settings": {
-          "title": "Enter Details for GST Invoice:",
+          "title": "Enter Details for GST Invoice (optional):",
           "gstin_number": "GST Number:",
-          "collect_company": false,
+          "collect_company": true,
           "company_name": "Company Name:",
           "disable_styles": false
         }
