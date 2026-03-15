@@ -192,3 +192,54 @@
   width: 18px;
   height: 18px;
 }
+
+/* ===== Contact Section ===== */
+
+.about-us__contact {
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+  padding-top: 4rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.about-us__contact-heading {
+  margin-bottom: 1.5rem;
+}
+
+.about-us__contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.about-us__contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: rgb(var(--color-foreground));
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.about-us__contact-item:hover {
+  opacity: 1;
+}
+
+.about-us__contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-us__contact-form .field {
+  margin-bottom: 1.5rem;
+}
+
+.about-us__contact-form .contact__fields {
+  gap: 1.5rem;
+}
