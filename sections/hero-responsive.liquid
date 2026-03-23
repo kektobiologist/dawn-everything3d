@@ -29,9 +29,9 @@
       {%- elsif section.settings.desktop_image != blank -%}
         {{
           section.settings.desktop_image
-          | image_url: width: 1500
+          | image_url: width: 750, height: 1000, crop: 'left'
           | image_tag:
-            widths: '375, 550, 750, 1000, 1500',
+            widths: '375, 550, 750',
             sizes: '100vw',
             loading: 'eager',
             fetchpriority: 'high',
