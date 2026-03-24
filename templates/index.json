@@ -12,7 +12,7 @@
     "hero": {
       "type": "hero-responsive",
       "settings": {
-        "desktop_image": "shopify://shop_images/Gemini_Generated_Image_qhd5ojqhd5ojqhd5_2_1.jpg",
+        "desktop_image": "shopify://shop_images/atrangee-banner-final.png",
         "desktop_height": 85,
         "mobile_height": 50,
         "show_overlay": false,
