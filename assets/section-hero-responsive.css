@@ -19,7 +19,7 @@
   }
 
   .hero-responsive__desktop {
-    display: block;
+    display: flex;
   }
 }
 
@@ -94,7 +94,6 @@
   width: 100%;
   height: var(--hero-height-desktop);
   background-color: #000;
-  display: flex;
   justify-content: center;
 }
 
