@@ -93,6 +93,16 @@
   position: relative;
   width: 100%;
   height: var(--hero-height-desktop);
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-responsive__desktop-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
   overflow: hidden;
 }
 
