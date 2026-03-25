@@ -128,10 +128,18 @@
     "gallery": {
       "type": "gallery-grid",
       "blocks": {
+        "img_5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_4939.jpg",
+            "caption": "",
+            "featured": false
+          }
+        },
         "image_pg4Exy": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2026-01-25_at_9.50.52_AM.jpg",
+            "image": "shopify://shop_images/IMG_5586.heic",
             "caption": "",
             "featured": false
           }
@@ -139,7 +147,16 @@
         "image_HHxk9H": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-01-25_at_12.14.27_AM.png",
+            "image": "shopify://shop_images/sagility_for_website.png",
+            "caption": "",
+            "featured": false
+          }
+        },
+        "video_33aUXX": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/54d0b3ebd69c457b987b9d2bad0a71e6.mp4",
+            "youtube_url": "",
             "caption": "",
             "featured": false
           }
@@ -160,10 +177,11 @@
             "featured": false
           }
         },
-        "img_3": {
-          "type": "image",
+        "video_HAzdyL": {
+          "type": "video",
           "settings": {
-            "image": "shopify://shop_images/raymurray.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/c1028b7258e7444ea9592e26209dfb04.mp4",
+            "youtube_url": "",
             "caption": "",
             "featured": false
           }
@@ -181,29 +199,22 @@
         "img_4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-01-25_at_9.56.53_AM.png",
-            "caption": "",
-            "featured": false
-          }
-        },
-        "img_5": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Untitled_5.png",
+            "image": "shopify://shop_images/doctor1.jpg",
             "caption": "",
             "featured": false
           }
         }
       },
       "block_order": [
+        "img_5",
         "image_pg4Exy",
         "image_HHxk9H",
+        "video_33aUXX",
         "img_1",
         "img_2",
-        "img_3",
+        "video_HAzdyL",
         "video_1",
-        "img_4",
-        "img_5"
+        "img_4"
       ],
       "settings": {
         "heading": "Our Creations",
