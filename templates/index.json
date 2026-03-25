@@ -128,6 +128,15 @@
     "gallery": {
       "type": "gallery-grid",
       "blocks": {
+        "video_Taq9wz": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/7a26101d44aa484e863183a173ea5bd5.mp4",
+            "youtube_url": "",
+            "caption": "",
+            "featured": false
+          }
+        },
         "img_5": {
           "type": "image",
           "settings": {
@@ -206,6 +215,7 @@
         }
       },
       "block_order": [
+        "video_Taq9wz",
         "img_5",
         "image_pg4Exy",
         "image_HHxk9H",
