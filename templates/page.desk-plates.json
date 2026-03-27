@@ -1,0 +1,516 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero-responsive",
+      "settings": {
+        "desktop_height": 75,
+        "mobile_height": 45,
+        "show_overlay": true,
+        "overlay_opacity": 30,
+        "heading": "Custom Branded Desk Nameplates for Your Team",
+        "desktop_heading_size": "h0",
+        "mobile_heading_size": "h2",
+        "subheading": "3D printed desk signs featuring your company logo, fonts, and colors — personalized for every employee",
+        "button_label": "Get a Quote on WhatsApp",
+        "button_link": "",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "features": {
+      "type": "features-grid",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "🏢",
+            "title": "Fully Company-Branded",
+            "description": "Each nameplate uses your company's logo, brand colors, and fonts — not generic templates. Your team's desks become an extension of your brand identity."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "🎨",
+            "title": "Personalized for Every Employee",
+            "description": "Every plate features the employee's name rendered in your brand style. A personal touch that makes people feel recognized and valued."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "🏗️",
+            "title": "Premium 3D Printed",
+            "description": "Manufactured in-house with durable PLA+ material. Solid, sturdy, and built to last — not flimsy printed paper or cheap plastic."
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "💰",
+            "title": "Affordable at Scale",
+            "description": "Just ₹499 per plate including GST, with a minimum order of only 5. Perfect for teams of any size — from small startups to large enterprises."
+          }
+        },
+        "feature_5": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔄",
+            "title": "Easy Reorders for New Joiners",
+            "description": "New employee? We save your brand template — just send us the name and we'll ship the new plate. No re-setup, no delays."
+          }
+        },
+        "feature_6": {
+          "type": "feature",
+          "settings": {
+            "icon": "📦",
+            "title": "Pan-India Delivery",
+            "description": "We ship anywhere in India. Whether your team is in one office or spread across multiple locations, we've got you covered."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6"
+      ],
+      "settings": {
+        "heading": "Why Companies Love Our Desk Nameplates",
+        "heading_size": "h1",
+        "subheading": "More than just a name on a desk — it's branding that your team actually wants to display",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "how_it_works": {
+      "type": "how-it-works-tabs",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Send Us Your Logo & Names",
+            "description": "<p>Share your company logo (any format) and a list of employee names. That's all we need to get started.</p>",
+            "video_url": "",
+            "icon": "upload",
+            "icon_color": "#4a90d9"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "We Design Your Plates",
+            "description": "<p>Our team creates a branded nameplate design using your logo, colors, and fonts. We send you a preview for approval before printing.</p>",
+            "video_url": "",
+            "icon": "design",
+            "icon_color": "#e85d75"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "3D Print In-House",
+            "description": "<p>Once approved, we 3D print every nameplate in-house with premium materials. Each one is quality-checked individually.</p>",
+            "video_url": "",
+            "icon": "print",
+            "icon_color": "#50c878"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Deliver to Your Door",
+            "description": "<p>Carefully packed and shipped to your office. Bulk orders typically delivered within 5-7 business days.</p>",
+            "video_url": "",
+            "icon": "ship",
+            "icon_color": "#9b59b6"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "settings": {
+        "heading": "How It Works",
+        "heading_size": "h1",
+        "subheading": "From your logo to desks in four simple steps",
+        "autoplay": true,
+        "autoplay_speed": 5000,
+        "media_position": "left",
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "pricing": {
+      "type": "pricing-highlight",
+      "blocks": {
+        "detail_1": {
+          "type": "detail",
+          "settings": {
+            "text": "Minimum order: just 5 nameplates"
+          }
+        },
+        "detail_2": {
+          "type": "detail",
+          "settings": {
+            "text": "Price includes GST — no surprises"
+          }
+        },
+        "detail_3": {
+          "type": "detail",
+          "settings": {
+            "text": "Custom design using your brand logo & colors"
+          }
+        },
+        "detail_4": {
+          "type": "detail",
+          "settings": {
+            "text": "Reorders for new employees at the same price"
+          }
+        },
+        "detail_5": {
+          "type": "detail",
+          "settings": {
+            "text": "Free shipping on orders of 20+"
+          }
+        }
+      },
+      "block_order": [
+        "detail_1",
+        "detail_2",
+        "detail_3",
+        "detail_4",
+        "detail_5"
+      ],
+      "settings": {
+        "eyebrow": "Simple, Transparent Pricing",
+        "price": "₹499",
+        "unit": "per nameplate, inclusive of GST",
+        "button_label": "Get a Quote on WhatsApp",
+        "button_link": "",
+        "open_in_new_tab": true,
+        "show_whatsapp_icon": true,
+        "note": "No hidden fees. Volume discounts available for orders of 50+ plates.",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "use_cases": {
+      "type": "features-grid",
+      "blocks": {
+        "use_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "🏢",
+            "title": "Modern Open Offices",
+            "description": "In open-plan layouts where desks look the same, a branded nameplate instantly tells visitors and colleagues where someone sits."
+          }
+        },
+        "use_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔀",
+            "title": "Hot-Desking & Hybrid Work",
+            "description": "Employees can carry their personal nameplate to whichever desk they use that day — portable identity in a flexible workspace."
+          }
+        },
+        "use_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "🎁",
+            "title": "New Joiner Welcome Kits",
+            "description": "Nothing says 'we were expecting you' like a personalized branded desk plate waiting on day one. A great first impression for new hires."
+          }
+        },
+        "use_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "🎉",
+            "title": "Team Offsites & Events",
+            "description": "Use nameplates at conference tables, workshops, and team events. Professional, reusable, and way better than sticky labels."
+          }
+        },
+        "use_5": {
+          "type": "feature",
+          "settings": {
+            "icon": "🏆",
+            "title": "Employee Recognition",
+            "description": "A premium desk plate is a tangible token of belonging. Employees love displaying something that's made specifically for them."
+          }
+        },
+        "use_6": {
+          "type": "feature",
+          "settings": {
+            "icon": "🌍",
+            "title": "Multi-Location Teams",
+            "description": "We can ship to multiple office addresses in a single order. Same design, same branding, consistent identity across locations."
+          }
+        }
+      },
+      "block_order": [
+        "use_1",
+        "use_2",
+        "use_3",
+        "use_4",
+        "use_5",
+        "use_6"
+      ],
+      "settings": {
+        "heading": "Perfect For",
+        "heading_size": "h1",
+        "subheading": "Desk nameplates that work in every kind of workplace",
+        "bg_color": "#f9fafb",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "logo_bar": {
+      "type": "logo-bar",
+      "blocks": {
+        "logo_1": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Atlassian_logo_brand_RGB_2x_1d586625-ee45-4cd1-9bdb-44a04c600054.png",
+            "name": "Atlassian",
+            "link": ""
+          }
+        },
+        "logo_2": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Adobe_Corporate_logo.png",
+            "name": "Adobe",
+            "link": ""
+          }
+        },
+        "logo_3": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/hyperbots.png",
+            "name": "Hyperbots",
+            "link": ""
+          }
+        },
+        "logo_4": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/unilever.png",
+            "name": "Unilever",
+            "link": ""
+          }
+        },
+        "logo_5": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/dashverse.png",
+            "name": "Dashverse",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_1",
+        "logo_2",
+        "logo_3",
+        "logo_4",
+        "logo_5"
+      ],
+      "settings": {
+        "heading": "Trusted by teams at",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "I had an amazing experience working with EVERYTHING 3D! They created personalized 3D miniature figurines for my team, and the results were absolutely delightful. The figurines were super cute, unique, and of excellent quality—my team loved them!",
+            "author_name": "Somya Singh",
+            "author_title": "Manager, Unilever",
+            "stars": 5
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The team has been our go to for the past two years for goodies for our visitors in a huge finance and accounting conference in New York and Vegas. Everything arrives on time, everything arrives beautifully packed.",
+            "author_name": "Niyati Chhaya",
+            "author_title": "Cofounder, VP AI, Hyperbots",
+            "stars": 5
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Everything3D managed our souvenirs for multiple events for us at Dashverse. Everyone loved the prints and almost everyone see it everyday at their homes increasing the visibility of Dashverse!",
+            "author_name": "Soumyadeep Mukherjee",
+            "author_title": "CTO, Dashverse",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "heading": "What Our Clients Say",
+        "heading_size": "h1",
+        "bg_color": "#f9fafb",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What do you need from us to get started?",
+            "icon": "chat_bubble",
+            "row_content": "<p>Just two things: <strong>your company logo</strong> (any format — PNG, SVG, PDF, even a screenshot works) and a <strong>list of employee names</strong>. We handle the rest — extracting colors, matching fonts, and designing the plates.</p>",
+            "page": ""
+          }
+        },
+        "faq_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does delivery take?",
+            "icon": "stopwatch",
+            "row_content": "<p>After you approve the design, production takes <strong>3-5 business days</strong>. Shipping adds another 2-4 days depending on your location. For urgent orders, let us know and we'll do our best to expedite.</p>",
+            "page": ""
+          }
+        },
+        "faq_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What size are the nameplates?",
+            "icon": "ruler",
+            "row_content": "<p>Our standard desk plates are approximately <strong>20cm x 6cm x 3cm</strong> — the perfect size to be visible on a desk without taking up too much space. Custom sizes are available on request.</p>",
+            "page": ""
+          }
+        },
+        "faq_4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can we customize the design beyond logo and name?",
+            "icon": "eye",
+            "row_content": "<p>Yes! You can choose the shape, add a department name or designation, adjust colors, and more. We'll work with you to get the design exactly right. Since these are 3D printed, we use <strong>solid colors</strong> (up to 5) for the best finish.</p>",
+            "page": ""
+          }
+        },
+        "faq_5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What material are the nameplates made of?",
+            "icon": "check_mark",
+            "row_content": "<p>We use <strong>premium PLA+ filament</strong>, a durable and eco-friendly material. The plates are solid, sturdy, and have a professional matte finish. They won't fade, warp, or break under normal office conditions.</p>",
+            "page": ""
+          }
+        },
+        "faq_6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What's the minimum order quantity?",
+            "icon": "question_mark",
+            "row_content": "<p>The minimum order is <strong>5 nameplates</strong>. There's no maximum — we've fulfilled orders from 5 plates to 500+. Volume discounts are available for orders above 50 plates.</p>",
+            "page": ""
+          }
+        },
+        "faq_7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do we order plates for new employees later?",
+            "icon": "check_mark",
+            "row_content": "<p>Simple — just message us on WhatsApp with the new name(s). We save your brand template, so reorders are instant. No re-setup needed, and the same ₹499/plate pricing applies even for single reorders (after first order min 5).</p>",
+            "page": ""
+          }
+        },
+        "faq_8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can you ship to multiple office locations?",
+            "icon": "truck",
+            "row_content": "<p>Absolutely. Just share the different addresses with the respective names, and we'll ship each batch to the right location. We deliver <strong>pan-India</strong>.</p>",
+            "page": ""
+          }
+        },
+        "faq_9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you provide a sample before bulk ordering?",
+            "icon": "eye",
+            "row_content": "<p>Yes, we can create 1-2 sample plates for you to review before committing to a bulk order. This way you can check the quality, colors, and size in person. Sample pricing applies.</p>",
+            "page": ""
+          }
+        },
+        "faq_10": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do we pay?",
+            "icon": "question_mark",
+            "row_content": "<p>We accept <strong>UPI, bank transfer (NEFT/IMPS), and all major payment methods</strong>. For larger corporate orders, we can generate a formal invoice/proforma invoice. GST invoice provided for all orders.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "features",
+    "how_it_works",
+    "pricing",
+    "use_cases",
+    "logo_bar",
+    "testimonials",
+    "faq"
+  ]
+}
