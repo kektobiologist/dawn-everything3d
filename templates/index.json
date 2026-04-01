@@ -277,6 +277,22 @@
             "name": "Dashverse",
             "link": ""
           }
+        },
+        "logo_QngfzE": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Sagility-logo-blue-r.svg",
+            "name": "Sagility",
+            "link": "https://sagility.com/"
+          }
+        },
+        "logo_LeVGHi": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/pre6_logo_for_website.svg",
+            "name": "Pre6",
+            "link": "https://pre6.ai"
+          }
         }
       },
       "block_order": [
@@ -284,7 +300,9 @@
         "logo_2",
         "logo_3",
         "logo_4",
-        "logo_5"
+        "logo_5",
+        "logo_QngfzE",
+        "logo_LeVGHi"
       ],
       "settings": {
         "heading": "Trusted by people at",
