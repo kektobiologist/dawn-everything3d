@@ -279,56 +279,7 @@
       }
     },
     "logo_bar": {
-      "type": "logo-bar",
-      "blocks": {
-        "logo_1": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Atlassian_logo_brand_RGB_2x_1d586625-ee45-4cd1-9bdb-44a04c600054.png",
-            "name": "Atlassian",
-            "link": ""
-          }
-        },
-        "logo_2": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/Adobe_Corporate_logo.png",
-            "name": "Adobe",
-            "link": ""
-          }
-        },
-        "logo_3": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/hyperbots.png",
-            "name": "Hyperbots",
-            "link": ""
-          }
-        },
-        "logo_4": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/unilever.png",
-            "name": "Unilever",
-            "link": ""
-          }
-        },
-        "logo_5": {
-          "type": "logo",
-          "settings": {
-            "logo": "shopify://shop_images/dashverse.png",
-            "name": "Dashverse",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_1",
-        "logo_2",
-        "logo_3",
-        "logo_4",
-        "logo_5"
-      ],
+      "type": "logo-bar-shared",
       "settings": {
         "heading": "Trusted by teams at",
         "heading_size": "h1",
