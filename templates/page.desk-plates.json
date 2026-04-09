@@ -456,9 +456,9 @@
   },
   "order": [
     "hero",
+    "pricing",
     "features",
     "how_it_works",
-    "pricing",
     "use_cases",
     "logo_bar",
     "testimonials",
