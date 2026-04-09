@@ -14,10 +14,6 @@
   }
 {%- endstyle -%}
 
-{%- liquid
-  assign logos = "Atlassian_logo_brand_RGB_2x_1d586625-ee45-4cd1-9bdb-44a04c600054.png|Atlassian,Adobe_Corporate_logo.png|Adobe,hyperbots.png|Hyperbots,unilever.png|Unilever,dashverse.png|Dashverse" | split: ","
--%}
-
 <div class="logo-bar logo-bar-{{ section.id }} color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width section-{{ section.id }}-padding">
     <h2 class="logo-bar__heading {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -25,18 +21,21 @@
     </h2>
 
     <div class="logo-bar__grid{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      {%- for entry in logos -%}
-        {%- assign parts = entry | split: "|" -%}
-        {%- assign filename = parts[0] -%}
-        {%- assign name = parts[1] -%}
-        <div class="logo-bar__logo">
-          {{
-            filename
-            | file_img_url: '300x'
-            | img_tag: name, 'logo-bar__img', 150
-          }}
-        </div>
-      {%- endfor -%}
+      <div class="logo-bar__logo">
+        <img src="{{ 'Atlassian_logo_brand_RGB_2x_1d586625-ee45-4cd1-9bdb-44a04c600054.png' | file_url }}" alt="Atlassian" width="150" loading="lazy">
+      </div>
+      <div class="logo-bar__logo">
+        <img src="{{ 'Adobe_Corporate_logo.png' | file_url }}" alt="Adobe" width="150" loading="lazy">
+      </div>
+      <div class="logo-bar__logo">
+        <img src="{{ 'hyperbots.png' | file_url }}" alt="Hyperbots" width="150" loading="lazy">
+      </div>
+      <div class="logo-bar__logo">
+        <img src="{{ 'unilever.png' | file_url }}" alt="Unilever" width="150" loading="lazy">
+      </div>
+      <div class="logo-bar__logo">
+        <img src="{{ 'dashverse.png' | file_url }}" alt="Dashverse" width="150" loading="lazy">
+      </div>
     </div>
   </div>
 </div>
