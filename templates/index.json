@@ -178,6 +178,14 @@
             "featured": true
           }
         },
+        "image_GEeDPU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/uncleaunty.jpg",
+            "caption": "",
+            "featured": false
+          }
+        },
         "img_2": {
           "type": "image",
           "settings": {
@@ -221,6 +229,7 @@
         "image_HHxk9H",
         "video_33aUXX",
         "img_1",
+        "image_GEeDPU",
         "img_2",
         "video_HAzdyL",
         "video_1",
