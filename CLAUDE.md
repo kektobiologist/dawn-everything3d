@@ -1,5 +1,15 @@
 # Dawn Everything3D
 
+## Local preview
+
+To preview changes locally before deploying:
+
+```
+shopify theme dev --theme 182678683950
+```
+
+This runs a local hot-reload server (usually at `http://127.0.0.1:9292`) that overlays your local file edits on top of the live theme's settings. It does **not** modify the live theme — it's safe for previewing. Use this instead of pushing to the live theme just to see how something looks.
+
 ## Deployment
 
 Pushing to GitHub main is not enough to update the live website. The full deploy process is:
