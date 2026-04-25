@@ -1,0 +1,108 @@
+{%- style -%}
+  .render-vs-print-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .render-vs-print__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .render-vs-print-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="render-vs-print render-vs-print-{{ section.id }} color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    {%- if section.settings.image != blank -%}
+      {{
+        section.settings.image
+        | image_url: width: 2000
+        | image_tag:
+          class: 'render-vs-print__image',
+          loading: 'lazy',
+          widths: '375, 550, 750, 1100, 1500, 1780, 2000',
+          sizes: '(min-width: 1100px) 1100px, 100vw',
+          alt: section.settings.image.alt | default: 'From AI render to final 3D print'
+      }}
+    {%- else -%}
+      <img
+        src="{{ 'client-expectation.png' | asset_url }}"
+        alt="From AI render to final 3D print"
+        class="render-vs-print__image"
+        loading="lazy"
+      >
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Render vs Print",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Displays a graphic explaining how the AI render compares to the final 3D-printed figurine. Defaults to the bundled client-expectation.png asset if no image is selected."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image (optional override)"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Max image width",
+      "default": 1100
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Render vs Print"
+    }
+  ]
+}
+{% endschema %}

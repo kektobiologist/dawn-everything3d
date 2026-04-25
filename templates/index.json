@@ -125,6 +125,15 @@
         "padding_bottom": 60
       }
     },
+    "render_vs_print": {
+      "type": "render-vs-print",
+      "settings": {
+        "max_width": 1100,
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "gallery": {
       "type": "gallery-grid",
       "blocks": {
@@ -178,14 +187,6 @@
             "featured": true
           }
         },
-        "image_GEeDPU": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/uncleaunty.jpg",
-            "caption": "",
-            "featured": false
-          }
-        },
         "img_2": {
           "type": "image",
           "settings": {
@@ -229,7 +230,6 @@
         "image_HHxk9H",
         "video_33aUXX",
         "img_1",
-        "image_GEeDPU",
         "img_2",
         "video_HAzdyL",
         "video_1",
@@ -384,6 +384,7 @@
     "hero",
     "cta_section",
     "how_it_works",
+    "render_vs_print",
     "gallery",
     "logo_bar",
     "testimonials",
