@@ -28,24 +28,38 @@
   }
 
   .render-vs-print__grid {
-    display: grid;
-    gap: 1.6rem;
+    display: flex;
+    gap: 1.2rem;
+    margin-left: calc(var(--page-width-margin) * -1);
+    margin-right: calc(var(--page-width-margin) * -1);
+    padding: 0 var(--page-width-margin) 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .render-vs-print__grid::-webkit-scrollbar {
+    display: none;
   }
 
   .render-vs-print__card {
     display: grid;
+    flex: 0 0 86%;
     gap: 1.5rem;
     padding: 1.4rem;
     border: 0.1rem solid rgba(var(--color-foreground), 0.1);
     border-radius: 0.8rem;
     background: rgb(var(--color-background));
     box-shadow: 0 1.2rem 3rem rgba(var(--color-foreground), 0.07);
+    scroll-snap-align: start;
   }
 
   .render-vs-print__comparison {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0.8rem;
     align-items: center;
   }
 
@@ -69,7 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 22rem;
+    min-height: 14rem;
     overflow: hidden;
     border-radius: 0.6rem;
     background: #fbfaf7;
@@ -88,9 +102,24 @@
     align-items: center;
     justify-content: center;
     color: #b9a371;
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     line-height: 1;
-    transform: rotate(90deg);
+  }
+
+  .render-vs-print__scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 0.4rem;
+    color: rgba(var(--color-foreground), 0.58);
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .render-vs-print__scroll-hint svg {
+    width: 1.4rem;
+    height: 1.4rem;
   }
 
   .render-vs-print__note {
@@ -127,8 +156,18 @@
     }
 
     .render-vs-print__grid {
+      display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.8rem;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      overflow: visible;
+      scroll-snap-type: none;
+    }
+
+    .render-vs-print__card {
+      flex-basis: auto;
     }
 
     .render-vs-print__card--featured {
@@ -142,11 +181,15 @@
     }
 
     .render-vs-print__arrow {
-      transform: none;
+      font-size: 2.8rem;
     }
 
     .render-vs-print__card--featured .render-vs-print__image-wrap {
       min-height: 32rem;
+    }
+
+    .render-vs-print__scroll-hint {
+      display: none;
     }
   }
 {%- endstyle -%}
@@ -267,6 +310,13 @@
             <p class="render-vs-print__note">Complex clothing patterns may be simplified.</p>
           </article>
         {%- endif -%}
+      </div>
+
+      <div class="render-vs-print__scroll-hint" aria-hidden="true">
+        <span>Swipe to see more</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
       </div>
 
       {%- if section.settings.footer_text != blank -%}
