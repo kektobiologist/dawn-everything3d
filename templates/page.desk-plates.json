@@ -20,8 +20,8 @@
         "desktop_heading_size": "h0",
         "mobile_heading_size": "h2",
         "subheading": "3D printed desk signs featuring your company logo, fonts, and colors — personalized for every employee",
-        "button_label": "Get a Quote on WhatsApp",
-        "button_link": "",
+        "button_label": "Order Now",
+        "button_link": "/products/company-branded-name-sign-for-desk",
         "color_scheme": "scheme-1"
       }
     },
@@ -200,10 +200,10 @@
         "eyebrow": "Simple, Transparent Pricing",
         "price": "₹499",
         "unit": "per nameplate, inclusive of GST",
-        "button_label": "Get a Quote on WhatsApp",
-        "button_link": "",
-        "open_in_new_tab": true,
-        "show_whatsapp_icon": true,
+        "button_label": "Order Now",
+        "button_link": "/products/company-branded-name-sign-for-desk",
+        "open_in_new_tab": false,
+        "show_whatsapp_icon": false,
         "note": "No hidden fees. Volume discounts available for orders of 50+ plates.",
         "padding_top": 36,
         "padding_bottom": 36
