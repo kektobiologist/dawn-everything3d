@@ -49,6 +49,8 @@
                     <img
                       src="{{ block.settings.asset_image | asset_url }}"
                       alt="{{ block.settings.alt_text | escape }}"
+                      width="{{ block.settings.image_width | default: 1600 }}"
+                      height="{{ block.settings.image_height | default: 1600 }}"
                       class="hero-responsive__image"
                       loading="eager"
                       fetchpriority="high"
@@ -144,6 +146,8 @@
                       <img
                         src="{{ block.settings.asset_image | asset_url }}"
                         alt="{{ block.settings.alt_text | escape }}"
+                        width="{{ block.settings.image_width | default: 1600 }}"
+                        height="{{ block.settings.image_height | default: 1600 }}"
                         class="hero-responsive__image"
                         loading="eager"
                         fetchpriority="high"
@@ -388,6 +392,18 @@
           "type": "text",
           "id": "alt_text",
           "label": "Alt text"
+        },
+        {
+          "type": "number",
+          "id": "image_width",
+          "label": "Image width",
+          "default": 1600
+        },
+        {
+          "type": "number",
+          "id": "image_height",
+          "label": "Image height",
+          "default": 1600
         }
       ]
     }
