@@ -11,7 +11,28 @@
   "sections": {
     "hero": {
       "type": "hero-responsive",
+      "blocks": {
+        "figurine_hero_1": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "hero1-figurine.png",
+            "alt_text": "Custom couple figurine"
+          }
+        },
+        "figurine_hero_2": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "hero2-figurine.png",
+            "alt_text": "Custom figurine portrait"
+          }
+        }
+      },
+      "block_order": [
+        "figurine_hero_1",
+        "figurine_hero_2"
+      ],
       "settings": {
+        "desktop_layout": "split",
         "desktop_image": "shopify://shop_images/atrangee-banner-final.png",
         "desktop_height": 85,
         "mobile_height": 50,
