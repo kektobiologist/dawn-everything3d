@@ -1,7 +1,7 @@
 /* ===========================================
    HERO RESPONSIVE SECTION
    - Mobile: Stacked (image on top, text below)
-   - Desktop: Image fills area, text overlaid on right
+   - Desktop: Image fills area with text overlaid, or split image/text layout
    =========================================== */
 
 /* Hide desktop on mobile, hide mobile on desktop */
@@ -39,6 +39,24 @@
   height: 100%;
   object-fit: cover;
   object-position: -10px center;
+}
+
+.hero-responsive__slides,
+.hero-responsive__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-responsive__slide {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero-responsive__slide.is-active {
+  opacity: 1;
+  z-index: 1;
 }
 
 .hero-responsive__media-wrapper .hero-responsive__placeholder {
@@ -186,6 +204,85 @@
 .hero-responsive__content-inner .hero-responsive__button:hover {
   background: #fff;
   color: #000;
+}
+
+/* ===========================================
+   DESKTOP SPLIT LAYOUT
+   =========================================== */
+
+.hero-responsive--split .hero-responsive__desktop {
+  background: rgb(var(--color-background));
+}
+
+.hero-responsive--split .hero-responsive__desktop-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  max-width: none;
+  overflow: hidden;
+}
+
+.hero-responsive--split .hero-responsive__media,
+.hero-responsive--split .hero-responsive__content-desktop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-responsive--split .hero-responsive__media {
+  background: #f7f7f7;
+}
+
+.hero-responsive--split .hero-responsive__media .hero-responsive__image {
+  object-fit: contain;
+  object-position: center;
+  padding: clamp(1.6rem, 3vw, 4rem);
+}
+
+.hero-responsive--split .hero-responsive__content-desktop {
+  inset: auto;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(3rem, 6vw, 7rem);
+}
+
+.hero-responsive--split .hero-responsive__content-inner {
+  max-width: 560px;
+}
+
+.hero-responsive--split .hero-responsive__content-inner .hero-responsive__heading {
+  color: rgb(var(--color-foreground));
+  text-shadow: none;
+}
+
+.hero-responsive--split .hero-responsive__content-inner .hero-responsive__subheading {
+  color: rgba(var(--color-foreground), 0.75);
+  text-shadow: none;
+}
+
+.hero-responsive--split .hero-responsive__content-inner .hero-responsive__button {
+  background: rgb(var(--color-button));
+  border-color: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+.hero-responsive--split .hero-responsive__content-inner .hero-responsive__button:hover {
+  background: rgba(var(--color-button), 0.85);
+  border-color: rgba(var(--color-button), 0.85);
+  color: rgb(var(--color-button-text));
+}
+
+.hero-responsive--split .hero-responsive__overlay {
+  display: none;
+}
+
+.hero-responsive--split .hero-responsive__media-wrapper {
+  background: #f7f7f7;
+}
+
+.hero-responsive--split .hero-responsive__media-wrapper .hero-responsive__image {
+  object-fit: contain;
+  object-position: center;
+  padding: 1.5rem;
 }
 
 /* ===========================================
