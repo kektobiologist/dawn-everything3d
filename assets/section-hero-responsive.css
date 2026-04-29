@@ -228,10 +228,6 @@
   height: 100%;
 }
 
-.hero-responsive--split .hero-responsive__media {
-  background: #f7f7f7;
-}
-
 .hero-responsive--split .hero-responsive__media .hero-responsive__image {
   object-fit: contain;
   object-position: center;
@@ -273,10 +269,6 @@
 
 .hero-responsive--split .hero-responsive__overlay {
   display: none;
-}
-
-.hero-responsive--split .hero-responsive__media-wrapper {
-  background: #f7f7f7;
 }
 
 .hero-responsive--split .hero-responsive__media-wrapper .hero-responsive__image {
