@@ -12,22 +12,47 @@
     "hero": {
       "type": "hero-responsive",
       "blocks": {
+        "image_slide_fwdLWX": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "",
+            "alt_text": "",
+            "image_width": 1600,
+            "image_height": 1600
+          }
+        },
+        "image_slide_aFUrph": {
+          "type": "image_slide",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Apr_30_2026_01_53_47_PM.png",
+            "asset_image": "",
+            "alt_text": "",
+            "image_width": 1600,
+            "image_height": 1600
+          }
+        },
         "figurine_hero_1": {
           "type": "image_slide",
           "settings": {
             "asset_image": "hero1-figurine.png",
-            "alt_text": "Custom couple figurine"
+            "alt_text": "Custom couple figurine",
+            "image_width": 2318,
+            "image_height": 2222
           }
         },
         "figurine_hero_2": {
           "type": "image_slide",
           "settings": {
             "asset_image": "hero2-figurine.png",
-            "alt_text": "Custom figurine portrait"
+            "alt_text": "Custom figurine portrait",
+            "image_width": 1254,
+            "image_height": 1254
           }
         }
       },
       "block_order": [
+        "image_slide_fwdLWX",
+        "image_slide_aFUrph",
         "figurine_hero_1",
         "figurine_hero_2"
       ],
@@ -89,6 +114,10 @@
             "title": "Send Your Photos",
             "description": "<p>Share clear photos showing faces of the person or couple you want to immortalize.</p>",
             "image": "shopify://shop_images/Untitled_2.png",
+            "asset_image": "",
+            "alt_text": "",
+            "image_width": 1200,
+            "image_height": 900,
             "video_url": "",
             "icon": "upload",
             "icon_color": "#4a90d9"
@@ -100,6 +129,10 @@
             "title": "Review Designs",
             "description": "<p>We create and send you multiple 3D render options to choose from.</p>",
             "image": "shopify://shop_images/Untitled_3.png",
+            "asset_image": "",
+            "alt_text": "",
+            "image_width": 1200,
+            "image_height": 900,
             "video_url": "",
             "icon": "design",
             "icon_color": "#e85d75"
@@ -111,6 +144,10 @@
             "title": "We 3D Print",
             "description": "<p>Once you approve, we 3D print your figurine 100% in-house with premium materials.</p>",
             "image": "shopify://shop_images/Screenshot_2026-01-26_at_10.44.20_PM.png",
+            "asset_image": "",
+            "alt_text": "",
+            "image_width": 1200,
+            "image_height": 900,
             "video_url": "",
             "icon": "print",
             "icon_color": "#50c878"
@@ -122,6 +159,10 @@
             "title": "Fast Shipping",
             "description": "<p>Your finished figurine ships within 48 hours of approval.</p>",
             "image": "shopify://shop_images/Untitled_4.png",
+            "asset_image": "",
+            "alt_text": "",
+            "image_width": 1200,
+            "image_height": 900,
             "video_url": "",
             "icon": "ship",
             "icon_color": "#9b59b6"
@@ -141,6 +182,7 @@
         "autoplay": true,
         "autoplay_speed": 5000,
         "media_position": "left",
+        "media_fit": "cover",
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60
@@ -149,6 +191,10 @@
     "render_vs_print": {
       "type": "render-vs-print",
       "settings": {
+        "heading": "From AI Render to Final 3D Print",
+        "heading_size": "h1",
+        "subheading": "AI renders are concept previews. Final figurines are adapted for real-world 3D printing.",
+        "footer_text": "We always try to keep the likeness, outfit feel, and overall vibe as close as possible.",
         "max_width": 1100,
         "color_scheme": "scheme-1",
         "padding_top": 40,
