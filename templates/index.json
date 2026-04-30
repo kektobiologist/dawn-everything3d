@@ -104,10 +104,6 @@
             "title": "Send Your Photos",
             "description": "<p>Share clear photos showing faces of the person or couple you want to immortalize.</p>",
             "image": "shopify://shop_images/Untitled_2.png",
-            "asset_image": "",
-            "alt_text": "",
-            "image_width": 1200,
-            "image_height": 900,
             "video_url": "",
             "icon": "upload",
             "icon_color": "#4a90d9"
@@ -119,10 +115,6 @@
             "title": "Review Designs",
             "description": "<p>We create and send you multiple 3D render options to choose from.</p>",
             "image": "shopify://shop_images/Untitled_3.png",
-            "asset_image": "",
-            "alt_text": "",
-            "image_width": 1200,
-            "image_height": 900,
             "video_url": "",
             "icon": "design",
             "icon_color": "#e85d75"
@@ -134,10 +126,6 @@
             "title": "We 3D Print",
             "description": "<p>Once you approve, we 3D print your figurine 100% in-house with premium materials.</p>",
             "image": "shopify://shop_images/Screenshot_2026-01-26_at_10.44.20_PM.png",
-            "asset_image": "",
-            "alt_text": "",
-            "image_width": 1200,
-            "image_height": 900,
             "video_url": "",
             "icon": "print",
             "icon_color": "#50c878"
@@ -149,10 +137,6 @@
             "title": "Fast Shipping",
             "description": "<p>Your finished figurine ships within 48 hours of approval.</p>",
             "image": "shopify://shop_images/Untitled_4.png",
-            "asset_image": "",
-            "alt_text": "",
-            "image_width": 1200,
-            "image_height": 900,
             "video_url": "",
             "icon": "ship",
             "icon_color": "#9b59b6"
@@ -172,7 +156,6 @@
         "autoplay": true,
         "autoplay_speed": 5000,
         "media_position": "left",
-        "media_fit": "cover",
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60
