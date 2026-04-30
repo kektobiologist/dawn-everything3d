@@ -14,7 +14,7 @@
   }
 {%- endstyle -%}
 
-<div class="how-it-works-tabs color-{{ section.settings.color_scheme }} gradient">
+<div class="how-it-works-tabs how-it-works-tabs--{{ section.settings.media_fit }} color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <div class="how-it-works-tabs__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -100,6 +100,15 @@
                     class: 'how-it-works-tabs__image',
                     loading: 'lazy'
                 }}
+              {%- elsif block.settings.asset_image != blank -%}
+                <img
+                  src="{{ block.settings.asset_image | asset_url }}"
+                  alt="{{ block.settings.alt_text | default: block.settings.title | escape }}"
+                  width="{{ block.settings.image_width | default: 1200 }}"
+                  height="{{ block.settings.image_height | default: 900 }}"
+                  class="how-it-works-tabs__image"
+                  loading="lazy"
+                >
               {%- else -%}
                 <div class="how-it-works-tabs__placeholder">
                   <div class="how-it-works-tabs__placeholder-icon" style="background-color: {{ block.settings.icon_color }}">
