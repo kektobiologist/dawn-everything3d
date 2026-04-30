@@ -412,6 +412,16 @@
       "label": "Media position (desktop)"
     },
     {
+      "type": "select",
+      "id": "media_fit",
+      "options": [
+        { "value": "cover", "label": "Cover" },
+        { "value": "contain", "label": "Contain" }
+      ],
+      "default": "cover",
+      "label": "Media fit"
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
@@ -464,6 +474,29 @@
           "id": "image",
           "label": "Image",
           "info": "Recommended: 800x600px or larger"
+        },
+        {
+          "type": "text",
+          "id": "asset_image",
+          "label": "Theme asset filename",
+          "info": "Optional fallback for developer-managed assets, e.g. deskprocess1.jpeg"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt text"
+        },
+        {
+          "type": "number",
+          "id": "image_width",
+          "label": "Image width",
+          "default": 1200
+        },
+        {
+          "type": "number",
+          "id": "image_height",
+          "label": "Image height",
+          "default": 900
         },
         {
           "type": "url",
