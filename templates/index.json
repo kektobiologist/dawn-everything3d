@@ -39,12 +39,32 @@
             "image_width": 1600,
             "image_height": 1600
           }
+        },
+        "figurine_hero_uncle": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "hero-uncle.png",
+            "alt_text": "Custom figurine portrait",
+            "image_width": 1254,
+            "image_height": 1254
+          }
+        },
+        "figurine_hero_amrita": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "hero-amrita.png",
+            "alt_text": "Custom figurine portrait",
+            "image_width": 1254,
+            "image_height": 1254
+          }
         }
       },
       "block_order": [
         "figurine_hero_1",
         "figurine_hero_2",
-        "image_slide_aFUrph"
+        "image_slide_aFUrph",
+        "figurine_hero_uncle",
+        "figurine_hero_amrita"
       ],
       "settings": {
         "desktop_layout": "split",
