@@ -162,6 +162,11 @@
   object-fit: cover;
 }
 
+.how-it-works-tabs--contain .how-it-works-tabs__image,
+.how-it-works-tabs--contain .how-it-works-tabs__video {
+  object-fit: contain;
+}
+
 /* YouTube embed */
 .how-it-works-tabs__youtube {
   width: 100%;
