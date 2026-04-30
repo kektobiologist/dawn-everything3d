@@ -11,7 +11,52 @@
   "sections": {
     "hero": {
       "type": "hero-responsive",
+      "blocks": {
+        "desk_hero_1": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "deskhero1.webp",
+            "alt_text": "Team desk nameplates with company branding",
+            "image_width": 1646,
+            "image_height": 2195
+          }
+        },
+        "desk_hero_2": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "deskhero2.webp",
+            "alt_text": "Company branded desk name sign on a table",
+            "image_width": 2890,
+            "image_height": 3853
+          }
+        },
+        "desk_hero_3": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "deskhero3.png",
+            "alt_text": "Stacked custom desk name signs",
+            "image_width": 1086,
+            "image_height": 1448
+          }
+        },
+        "desk_hero_4": {
+          "type": "image_slide",
+          "settings": {
+            "asset_image": "deskhero4.png",
+            "alt_text": "Custom desk name sign held by hand",
+            "image_width": 1866,
+            "image_height": 1674
+          }
+        }
+      },
+      "block_order": [
+        "desk_hero_1",
+        "desk_hero_2",
+        "desk_hero_3",
+        "desk_hero_4"
+      ],
       "settings": {
+        "desktop_layout": "split",
         "desktop_height": 75,
         "mobile_height": 45,
         "show_overlay": true,
@@ -101,6 +146,10 @@
           "settings": {
             "title": "Send Us Your Logo & Names",
             "description": "<p>Share your company logo (any format) and a list of employee names. That's all we need to get started.</p>",
+            "asset_image": "deskprocess1.jpeg",
+            "alt_text": "Logo and employee names shared over WhatsApp",
+            "image_width": 589,
+            "image_height": 525,
             "video_url": "",
             "icon": "upload",
             "icon_color": "#4a90d9"
@@ -111,6 +160,10 @@
           "settings": {
             "title": "We Design Your Plates",
             "description": "<p>Our team creates a branded nameplate design using your logo, colors, and fonts. We send you a preview for approval before printing.</p>",
+            "asset_image": "deskprocess2.png",
+            "alt_text": "3D design preview for a branded name sign",
+            "image_width": 1544,
+            "image_height": 944,
             "video_url": "",
             "icon": "design",
             "icon_color": "#e85d75"
@@ -121,6 +174,10 @@
           "settings": {
             "title": "3D Print In-House",
             "description": "<p>Once approved, we 3D print every nameplate in-house with premium materials. Each one is quality-checked individually.</p>",
+            "asset_image": "deskprocess3.png",
+            "alt_text": "3D printers producing custom desk name signs",
+            "image_width": 964,
+            "image_height": 1716,
             "video_url": "",
             "icon": "print",
             "icon_color": "#50c878"
@@ -131,6 +188,10 @@
           "settings": {
             "title": "Deliver to Your Door",
             "description": "<p>Carefully packed and shipped to your office. Bulk orders typically delivered within 5-7 business days.</p>",
+            "asset_image": "deskprocess4.jpeg",
+            "alt_text": "Branded desk name sign placed at an office workstation",
+            "image_width": 958,
+            "image_height": 1280,
             "video_url": "",
             "icon": "ship",
             "icon_color": "#9b59b6"
@@ -150,6 +211,7 @@
         "autoplay": true,
         "autoplay_speed": 5000,
         "media_position": "left",
+        "media_fit": "contain",
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60
