@@ -93,44 +93,67 @@
     }
   }
 
-  .testimonials__marquee {
+  .testimonials__carousel {
+    position: relative;
     margin-top: 3rem;
-    overflow: hidden;
-    width: 100%;
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
-    mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  .testimonials__track {
+  .testimonials__scroller {
     display: flex;
     flex-wrap: nowrap;
     align-items: stretch;
-    width: max-content;
-    animation: testimonials-scroll 60s linear infinite;
+    column-gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.5rem 0.25rem;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
-  .testimonials__marquee:hover .testimonials__track {
-    animation-play-state: paused;
+  .testimonials__scroller::-webkit-scrollbar {
+    display: none;
   }
 
-  @keyframes testimonials-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+  .testimonials__nav {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: opacity 0.2s ease, background 0.2s ease;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .testimonials__track {
-      animation: none;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
+  .testimonials__nav:hover {
+    background: #f3f4f6;
+  }
+
+  .testimonials__nav:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  @media screen and (min-width: 750px) {
+    .testimonials__nav {
+      display: flex;
     }
   }
 
   .testimonial-card {
-    flex: 0 0 auto;
-    width: 300px;
-    margin-right: 2rem;
+    flex: 0 0 85%;
+    scroll-snap-align: center;
     background: #ffffff;
     padding: 2rem;
     border-radius: 8px;
@@ -143,13 +166,7 @@
 
   @media screen and (min-width: 750px) {
     .testimonial-card {
-      width: 360px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .testimonial-card {
-      margin-right: 0;
+      flex: 0 0 calc((100% - 4rem) / 3);
     }
   }
 
