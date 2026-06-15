@@ -8,7 +8,7 @@
       </div>
     {%- endif -%}
 
-    <div class="testimonials__grid">
+    {%- capture testimonial_cards -%}
       {%- for block in section.blocks -%}
         <div class="testimonial-card" {{ block.shopify_attributes }}>
           <div class="testimonial-card__stars">
@@ -32,6 +32,13 @@
           </div>
         </div>
       {%- endfor -%}
+    {%- endcapture -%}
+
+    <div class="testimonials__marquee">
+      <div class="testimonials__track">
+        {{ testimonial_cards }}
+        {{ testimonial_cards }}
+      </div>
     </div>
   </div>
 </div>
@@ -50,20 +57,44 @@
     }
   }
 
-  .testimonials__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .testimonials__marquee {
     margin-top: 3rem;
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
   }
 
-  @media screen and (min-width: 750px) {
-    .testimonials__grid {
-      grid-template-columns: repeat(3, 1fr);
+  .testimonials__track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: max-content;
+    animation: testimonials-scroll 60s linear infinite;
+  }
+
+  .testimonials__marquee:hover .testimonials__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes testimonials-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .testimonials__track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
     }
   }
 
   .testimonial-card {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 2rem;
     background: #ffffff;
     padding: 2rem;
     border-radius: 8px;
@@ -72,6 +103,18 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .testimonial-card {
+      width: 360px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-card {
+      margin-right: 0;
+    }
   }
 
   .testimonial-card__stars {

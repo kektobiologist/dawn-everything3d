@@ -20,7 +20,7 @@
       {{ section.settings.heading }}
     </h2>
 
-    <div class="logo-bar__grid{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {%- capture logo_items -%}
       <div class="logo-bar__logo">
         <img src="{{ 'Atlassian_logo_brand_RGB_2x_1d586625-ee45-4cd1-9bdb-44a04c600054.png' | file_url }}" alt="Atlassian" width="150" loading="lazy">
       </div>
@@ -45,9 +45,62 @@
       <div class="logo-bar__logo">
         <img src="{{ 'itc-logo.png' | asset_url }}" alt="ITC Limited" width="150" loading="lazy">
       </div>
+    {%- endcapture -%}
+
+    <div class="logo-bar__marquee{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="logo-bar__track">
+        {{ logo_items }}
+        {{ logo_items }}
+      </div>
     </div>
   </div>
 </div>
+
+{%- style -%}
+  .logo-bar__marquee {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .logo-bar__track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: max-content;
+    animation: logo-bar-scroll 40s linear infinite;
+  }
+
+  .logo-bar__marquee:hover .logo-bar__track {
+    animation-play-state: paused;
+  }
+
+  .logo-bar__track .logo-bar__logo {
+    flex: 0 0 auto;
+    margin-right: 2.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .logo-bar__track .logo-bar__logo {
+      margin-right: 3.5rem;
+    }
+  }
+
+  @keyframes logo-bar-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-bar__track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+{%- endstyle -%}
 
 {% schema %}
 {
