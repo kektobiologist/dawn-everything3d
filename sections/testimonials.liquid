@@ -8,40 +8,76 @@
       </div>
     {%- endif -%}
 
-    {%- capture testimonial_cards -%}
-      {%- for block in section.blocks -%}
-        <div class="testimonial-card" {{ block.shopify_attributes }}>
-          <div class="testimonial-card__stars">
-            {%- for i in (1..block.settings.stars) -%}
-              <span class="star">★</span>
-            {%- endfor -%}
-          </div>
-          <blockquote class="testimonial-card__quote">"{{ block.settings.quote | escape }}"</blockquote>
-          <div class="testimonial-card__author">
-            {%- if block.settings.avatar != blank -%}
-              <div class="testimonial-card__avatar">
-                {{ block.settings.avatar | image_url: width: 100 | image_tag: loading: 'lazy', class: 'avatar-img' }}
-              </div>
-            {%- endif -%}
-            <div class="testimonial-card__info">
-              <cite class="testimonial-card__name">{{ block.settings.author_name | escape }}</cite>
-              {%- if block.settings.author_title != blank -%}
-                <span class="testimonial-card__title">{{ block.settings.author_title | escape }}</span>
+    <div class="testimonials__carousel" data-testimonials="{{ section.id }}">
+      <button class="testimonials__nav testimonials__nav--prev" type="button" aria-label="Previous review" data-dir="-1">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="testimonials__scroller" tabindex="0">
+        {%- for block in section.blocks -%}
+          <div class="testimonial-card" {{ block.shopify_attributes }}>
+            <div class="testimonial-card__stars">
+              {%- for i in (1..block.settings.stars) -%}
+                <span class="star">★</span>
+              {%- endfor -%}
+            </div>
+            <blockquote class="testimonial-card__quote">"{{ block.settings.quote | escape }}"</blockquote>
+            <div class="testimonial-card__author">
+              {%- if block.settings.avatar != blank -%}
+                <div class="testimonial-card__avatar">
+                  {{ block.settings.avatar | image_url: width: 100 | image_tag: loading: 'lazy', class: 'avatar-img' }}
+                </div>
               {%- endif -%}
+              <div class="testimonial-card__info">
+                <cite class="testimonial-card__name">{{ block.settings.author_name | escape }}</cite>
+                {%- if block.settings.author_title != blank -%}
+                  <span class="testimonial-card__title">{{ block.settings.author_title | escape }}</span>
+                {%- endif -%}
+              </div>
             </div>
           </div>
-        </div>
-      {%- endfor -%}
-    {%- endcapture -%}
-
-    <div class="testimonials__marquee">
-      <div class="testimonials__track">
-        {{ testimonial_cards }}
-        {{ testimonial_cards }}
+        {%- endfor -%}
       </div>
+
+      <button class="testimonials__nav testimonials__nav--next" type="button" aria-label="Next review" data-dir="1">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-testimonials="{{ section.id }}"]');
+    if (!root) return;
+    var scroller = root.querySelector('.testimonials__scroller');
+    var prev = root.querySelector('.testimonials__nav--prev');
+    var next = root.querySelector('.testimonials__nav--next');
+
+    function step() {
+      var card = scroller.querySelector('.testimonial-card');
+      if (!card) return scroller.clientWidth;
+      var gap = parseFloat(getComputedStyle(scroller).columnGap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function update() {
+      var maxScroll = scroller.scrollWidth - scroller.clientWidth - 1;
+      prev.disabled = scroller.scrollLeft <= 0;
+      next.disabled = scroller.scrollLeft >= maxScroll;
+    }
+
+    root.querySelectorAll('.testimonials__nav').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        scroller.scrollBy({ left: step() * parseInt(btn.dataset.dir, 10), behavior: 'smooth' });
+      });
+    });
+
+    scroller.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
 
 <style>
   .section-{{ section.id }}-padding {
