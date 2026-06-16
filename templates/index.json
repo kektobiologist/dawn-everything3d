@@ -372,10 +372,10 @@
         }
       },
       "block_order": [
+        "testimonial_4",
         "testimonial_1",
         "testimonial_2",
-        "testimonial_3",
-        "testimonial_4"
+        "testimonial_3"
       ],
       "settings": {
         "heading": "",
