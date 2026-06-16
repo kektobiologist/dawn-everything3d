@@ -14,29 +14,20 @@
       </button>
 
       <div class="testimonials__scroller" tabindex="0">
-        {%- for block in section.blocks -%}
-          <div class="testimonial-card" {{ block.shopify_attributes }}>
-            <div class="testimonial-card__stars">
-              {%- for i in (1..block.settings.stars) -%}
-                <span class="star">★</span>
-              {%- endfor -%}
-            </div>
-            <blockquote class="testimonial-card__quote">"{{ block.settings.quote | escape }}"</blockquote>
-            <div class="testimonial-card__author">
-              {%- if block.settings.avatar != blank -%}
-                <div class="testimonial-card__avatar">
-                  {{ block.settings.avatar | image_url: width: 100 | image_tag: loading: 'lazy', class: 'avatar-img' }}
-                </div>
-              {%- endif -%}
-              <div class="testimonial-card__info">
-                <cite class="testimonial-card__name">{{ block.settings.author_name | escape }}</cite>
-                {%- if block.settings.author_title != blank -%}
-                  <span class="testimonial-card__title">{{ block.settings.author_title | escape }}</span>
-                {%- endif -%}
-              </div>
-            </div>
-          </div>
-        {%- endfor -%}
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            {%- render 'testimonial-card',
+              quote: block.settings.quote,
+              author_name: block.settings.author_name,
+              author_title: block.settings.author_title,
+              avatar: block.settings.avatar,
+              stars: block.settings.stars,
+              shopify_attributes: block.shopify_attributes
+            -%}
+          {%- endfor -%}
+        {%- else -%}
+          {%- render 'shared-testimonials' -%}
+        {%- endif -%}
       </div>
 
       <button class="testimonials__nav testimonials__nav--next" type="button" aria-label="Next review" data-dir="1">

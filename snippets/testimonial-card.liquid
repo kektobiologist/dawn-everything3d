@@ -1,0 +1,23 @@
+{%- assign star_count = stars | default: 5 | plus: 0 -%}
+
+<div class="testimonial-card" {{ shopify_attributes }}>
+  <div class="testimonial-card__stars">
+    {%- for i in (1..star_count) -%}
+      <span class="star">★</span>
+    {%- endfor -%}
+  </div>
+  <blockquote class="testimonial-card__quote">"{{ quote | escape }}"</blockquote>
+  <div class="testimonial-card__author">
+    {%- if avatar != blank -%}
+      <div class="testimonial-card__avatar">
+        {{ avatar | image_url: width: 100 | image_tag: loading: 'lazy', class: 'avatar-img' }}
+      </div>
+    {%- endif -%}
+    <div class="testimonial-card__info">
+      <cite class="testimonial-card__name">{{ author_name | escape }}</cite>
+      {%- if author_title != blank -%}
+        <span class="testimonial-card__title">{{ author_title | escape }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
