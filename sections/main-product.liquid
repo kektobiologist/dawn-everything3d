@@ -262,6 +262,14 @@
                     </span>
                   </label>
                   <div class="price-per-item__container">
+                    {%- liquid
+                      # Minimum order quantity. Defaults to the variant's quantity rule,
+                      # but products tagged `names-list` enforce a minimum of 10 (MOQ).
+                      assign qty_min = product.selected_or_first_available_variant.quantity_rule.min
+                      if product.tags contains 'names-list'
+                        assign qty_min = 10
+                      endif
+                    -%}
                     <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                       <button class="quantity__button" name="minus" type="button">
                         <span class="visually-hidden">
@@ -277,14 +285,14 @@
                         name="quantity"
                         id="Quantity-{{ section.id }}"
                         data-cart-quantity="{{ cart_qty }}"
-                        data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                        min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        data-min="{{ qty_min }}"
+                        min="{{ qty_min }}"
                         {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
                           data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
                           max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
                         {% endif %}
                         step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
-                        value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        value="{{ qty_min }}"
                         form="{{ product_form_id }}"
                       >
                       <button class="quantity__button" name="plus" type="button">

@@ -1,0 +1,73 @@
+{% comment %}
+  Renders a "list of names" text box on the product page.
+
+  The value is saved as a line item property ("Names") so it shows up on the
+  order in the Shopify admin and on the order confirmation.
+
+  Shown only when the product is tagged `names-list` (see buy-buttons.liquid).
+
+  Accepts:
+  - product: {Object} product object.
+  - product_form_id: {String} product form id (so the field submits with the form).
+  - section: {Object} the section, used to build unique element ids.
+
+  Usage:
+  {%- render 'product-names-field', product: product, product_form_id: product_form_id, section: section -%}
+{% endcomment %}
+
+<style>
+  .names-field {
+    margin-bottom: 2rem;
+  }
+  .names-field__label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: rgb(var(--color-foreground));
+  }
+  .names-field__label .required {
+    color: red;
+    margin-left: 0.2rem;
+  }
+  .names-field__hint {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    color: rgba(var(--color-foreground), 0.7);
+  }
+  .names-field__input {
+    width: 100%;
+    min-height: 12rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-family: inherit;
+    line-height: 1.5;
+    color: rgb(var(--color-foreground));
+    background-color: transparent;
+    resize: vertical;
+  }
+  .names-field__input:focus {
+    border-color: #000;
+    outline: none;
+  }
+</style>
+
+<div class="names-field">
+  <label class="names-field__label" for="Names-{{ section.id }}">
+    List of names <span class="required">*</span>
+  </label>
+  <span class="names-field__hint">
+    Enter one name per line — one for each piece you're ordering.
+  </span>
+  <textarea
+    id="Names-{{ section.id }}"
+    name="properties[Names]"
+    form="{{ product_form_id }}"
+    class="names-field__input"
+    placeholder="e.g.&#10;Aanya&#10;Vivaan&#10;Diya"
+    required
+  ></textarea>
+</div>
