@@ -61,11 +61,11 @@
         "mobile_height": 45,
         "show_overlay": true,
         "overlay_opacity": 30,
-        "heading": "Custom Branded Desk Nameplates for Your Team",
+        "heading": "Branded desk plates, made for every name on your team",
         "desktop_heading_size": "h0",
         "mobile_heading_size": "h2",
-        "subheading": "3D printed desk signs featuring your company logo, fonts, and colors — personalized for every employee",
-        "button_label": "Order Now",
+        "subheading": "Send your logo and names. We design, print, and deliver custom desk plates across India.",
+        "button_label": "Start your order",
         "button_link": "/products/company-branded-name-sign",
         "color_scheme": "scheme-1"
       }
@@ -76,64 +76,40 @@
         "feature_1": {
           "type": "feature",
           "settings": {
-            "icon": "🏢",
-            "title": "Fully Company-Branded",
-            "description": "Each nameplate uses your company's logo, brand colors, and fonts — not generic templates. Your team's desks become an extension of your brand identity."
+            "graphic": "brand",
+            "icon": "",
+            "title": "Designed around your brand",
+            "description": "Your logo, colors, and type style become one consistent design for the whole team—not a generic template."
           }
         },
         "feature_2": {
           "type": "feature",
           "settings": {
-            "icon": "🎨",
-            "title": "Personalized for Every Employee",
-            "description": "Every plate features the employee's name rendered in your brand style. A personal touch that makes people feel recognized and valued."
+            "graphic": "print",
+            "icon": "",
+            "title": "Made in-house to last",
+            "description": "Every plate is 3D printed in durable PLA+ and checked individually before it leaves our studio."
           }
         },
         "feature_3": {
           "type": "feature",
           "settings": {
-            "icon": "🏗️",
-            "title": "Premium 3D Printed",
-            "description": "Manufactured in-house with durable PLA+ material. Solid, sturdy, and built to last — not flimsy printed paper or cheap plastic."
-          }
-        },
-        "feature_4": {
-          "type": "feature",
-          "settings": {
-            "icon": "💰",
-            "title": "Affordable at Scale",
-            "description": "Just ₹499 per plate including GST, with a minimum order of only 5. Perfect for teams of any size — from small startups to large enterprises."
-          }
-        },
-        "feature_5": {
-          "type": "feature",
-          "settings": {
-            "icon": "🔄",
-            "title": "Easy Reorders for New Joiners",
-            "description": "New employee? We save your brand template — just send us the name and we'll ship the new plate. No re-setup, no delays."
-          }
-        },
-        "feature_6": {
-          "type": "feature",
-          "settings": {
-            "icon": "📦",
-            "title": "Pan-India Delivery",
-            "description": "We ship anywhere in India. Whether your team is in one office or spread across multiple locations, we've got you covered."
+            "graphic": "reorder",
+            "icon": "",
+            "title": "Easy reorders for new joiners",
+            "description": "We save your approved brand design. Send the next name whenever your team grows and the new plate will match."
           }
         }
       },
       "block_order": [
         "feature_1",
         "feature_2",
-        "feature_3",
-        "feature_4",
-        "feature_5",
-        "feature_6"
+        "feature_3"
       ],
       "settings": {
-        "heading": "Why Companies Love Our Desk Nameplates",
+        "heading": "Built for growing teams",
         "heading_size": "h1",
-        "subheading": "More than just a name on a desk — it's branding that your team actually wants to display",
+        "subheading": "A consistent brand detail for day one—and every new joiner after it.",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -259,10 +235,10 @@
         "detail_5"
       ],
       "settings": {
-        "eyebrow": "Simple, Transparent Pricing",
+        "eyebrow": "Simple, transparent pricing",
         "price": "₹499",
         "unit": "per nameplate, inclusive of GST",
-        "button_label": "Order Now",
+        "button_label": "Start your order",
         "button_link": "/products/company-branded-name-sign",
         "open_in_new_tab": false,
         "show_whatsapp_icon": false,
@@ -273,6 +249,7 @@
     },
     "use_cases": {
       "type": "features-grid",
+      "disabled": true,
       "blocks": {
         "use_1": {
           "type": "feature",
@@ -352,6 +329,7 @@
     },
     "testimonials": {
       "type": "testimonials",
+      "disabled": true,
       "settings": {
         "heading": "What Our Clients Say",
         "heading_size": "h1",
@@ -485,11 +463,11 @@
   "order": [
     "hero",
     "pricing",
-    "features",
     "how_it_works",
-    "use_cases",
+    "features",
     "logo_bar",
-    "testimonials",
-    "faq"
+    "faq",
+    "use_cases",
+    "testimonials"
   ]
 }
