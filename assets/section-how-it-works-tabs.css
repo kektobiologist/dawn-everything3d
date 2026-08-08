@@ -133,12 +133,21 @@
   background: rgba(var(--color-foreground), 0.03);
 }
 
+.how-it-works-tabs--contain .how-it-works-tabs__media {
+  aspect-ratio: 3/4;
+}
+
 @media screen and (min-width: 750px) {
   .how-it-works-tabs__media {
     flex: 1.2;
     min-height: 400px;
     aspect-ratio: auto;
     border-radius: 20px;
+  }
+
+  .how-it-works-tabs--contain .how-it-works-tabs__media {
+    aspect-ratio: auto;
+    min-height: 540px;
   }
 }
 
@@ -164,6 +173,10 @@
 
 .how-it-works-tabs--contain .how-it-works-tabs__image,
 .how-it-works-tabs--contain .how-it-works-tabs__video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
   object-fit: contain;
 }
 
