@@ -76,7 +76,7 @@
         "heading": "Turn your favorite moments into lasting memories",
         "desktop_heading_size": "h0",
         "mobile_heading_size": "h2",
-        "subheading": "Pixar-inspired figurines of the people you love, made to last a lifetime",
+        "subheading": "Pixar-inspired figurines of the people you love. Design previews are free — you only pay when you order.",
         "button_label": "Create Your Figurine",
         "button_link": "https://studio.everything3dindia.com/",
         "color_scheme": "scheme-1"
@@ -90,9 +90,9 @@
           "settings": {
             "image": "shopify://shop_images/couple-nobg.png",
             "title": "Couple Figurine",
-            "price": "Starting at Rs. 6999",
-            "button_label": "Order Now",
-            "link": "shopify://collections/mini-me-figurine"
+            "price": "From ₹6,999",
+            "button_label": "Design for Free",
+            "link": "https://studio.everything3dindia.com/"
           }
         },
         "single": {
@@ -100,9 +100,9 @@
           "settings": {
             "image": "shopify://shop_images/single-nobg.png",
             "title": "Single Figurine",
-            "price": "Starting at Rs. 2999",
-            "button_label": "Order Now",
-            "link": "shopify://collections/mini-me-figurine"
+            "price": "From ₹4,499",
+            "button_label": "Design for Free",
+            "link": "https://studio.everything3dindia.com/"
           }
         }
       },
@@ -121,8 +121,8 @@
         "step_1": {
           "type": "step",
           "settings": {
-            "title": "Send Your Photos",
-            "description": "<p>Share clear photos showing faces of the person or couple you want to immortalize.</p>",
+            "title": "Upload a Clear Photo",
+            "description": "<p>Open Figurine Studio and upload a clear photo of the person, couple, family, or pet.</p>",
             "image": "shopify://shop_images/Untitled_2.png",
             "asset_image": "",
             "alt_text": "",
@@ -136,8 +136,8 @@
         "step_2": {
           "type": "step",
           "settings": {
-            "title": "Review Designs",
-            "description": "<p>We create and send you multiple 3D render options to choose from.</p>",
+            "title": "Pick Your Design",
+            "description": "<p>Choose from two free design previews created from your photo.</p>",
             "image": "shopify://shop_images/Untitled_3.png",
             "asset_image": "",
             "alt_text": "",
@@ -151,8 +151,8 @@
         "step_3": {
           "type": "step",
           "settings": {
-            "title": "We 3D Print",
-            "description": "<p>Once you approve, we 3D print your figurine 100% in-house with premium materials.</p>",
+            "title": "Refine & Approve",
+            "description": "<p>Request changes at no extra cost until you’re happy with the design.</p>",
             "image": "shopify://shop_images/Screenshot_2026-01-26_at_10.44.20_PM.png",
             "asset_image": "",
             "alt_text": "",
@@ -166,8 +166,8 @@
         "step_4": {
           "type": "step",
           "settings": {
-            "title": "Fast Shipping",
-            "description": "<p>Your finished figurine ships within 48 hours of approval.</p>",
+            "title": "Choose a Size & Order",
+            "description": "<p>Select 13 cm, 15 cm, or 18 cm and place your order. We’ll 3D print it in Bangalore and ship it across India.</p>",
             "image": "shopify://shop_images/Untitled_4.png",
             "asset_image": "",
             "alt_text": "",
@@ -349,7 +349,7 @@
           "settings": {
             "heading": "How long does it take to receive my figurine?",
             "icon": "stopwatch",
-            "row_content": "<p>After you approve the 3D render, your figurine ships within 48 hours. Typical delivery is 2-5 business days from shipping depending on your location.</p>",
+            "row_content": "<p>After you approve your design and place the order, your finished figurine ships within 48 hours. Typical delivery is 2-5 business days from shipping depending on your location.</p>",
             "page": ""
           }
         },
@@ -367,7 +367,7 @@
           "settings": {
             "heading": "What size are the figurines?",
             "icon": "ruler",
-            "row_content": "<p>Our standard figurines are approximately 13cm tall. We also offer larger sizes upon request. Contact us for custom sizing options.</p>",
+            "row_content": "<p>Our standard figurines are 13 cm tall. You can choose 15 cm for an additional ₹1,000 or 18 cm for an additional ₹2,000 when ordering.</p>",
             "page": ""
           }
         },
@@ -376,7 +376,7 @@
           "settings": {
             "heading": "Can I request customizations to the design?",
             "icon": "chat_bubble",
-            "row_content": "<p>Absolutely! Along with the custom text at the base, we can include other design requests too. Contact us to see what’s possible.</p>",
+            "row_content": "<p>Absolutely. Request changes in Figurine Studio before approval — revisions are free. You can also add custom text to the base when ordering.</p>",
             "page": ""
           }
         },

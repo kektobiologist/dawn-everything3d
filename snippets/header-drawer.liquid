@@ -22,6 +22,15 @@
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
+                {%- liquid
+                  assign header_link_url = link.url
+                  assign header_link_title = link.title
+
+                  if link.url contains '/collections/mini-me-figurine'
+                    assign header_link_url = settings.figurine_studio_url | default: 'https://studio.everything3dindia.com/'
+                    assign header_link_title = 'Figurine Studio'
+                  endif
+                -%}
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -122,13 +131,13 @@
                   {%- else -%}
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
+                      href="{{ header_link_url }}"
                       class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
                       {% if link.current %}
                         aria-current="page"
                       {% endif %}
                     >
-                      {{ link.title | escape }}
+                      {{ header_link_title | escape }}
                     </a>
                   {%- endif -%}
                 </li>

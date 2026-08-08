@@ -125,6 +125,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
+    "figurine_studio_url": "https://studio.everything3dindia.com/",
     "cart_type": "notification",
     "show_vendor": false,
     "show_cart_note": false,
@@ -148,7 +149,7 @@
         "settings": {
           "phone_number": "917892554719",
           "button_text": "Chat with us",
-          "message": "Hello, I would like to order a mini figurine",
+          "message": "Hello, I need help with my figurine design or order in Figurine Studio.",
           "bottom_position": 20,
           "right_position": 20,
           "bg_color": "#25d366",
