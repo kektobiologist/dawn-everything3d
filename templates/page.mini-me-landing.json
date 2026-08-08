@@ -22,15 +22,15 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Custom 3D printed figurines from your photos. The perfect personalized gift.",
+            "text": "Custom 3D printed figurines from your photos. Design previews are free — you only pay when you order.",
             "text_style": "body"
           }
         },
         "buttons": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Create Yours Now",
-            "button_link_1": "/products/mini-me",
+            "button_label_1": "Design for Free",
+            "button_link_1": "https://studio.everything3dindia.com/",
             "button_style_secondary_1": false,
             "button_label_2": "Button label",
             "button_link_2": "",
@@ -99,13 +99,13 @@
         "step2": {
           "type": "step",
           "settings": {
-            "title": "AI Creates 3D Model"
+            "title": "Pick from Two Designs"
           }
         },
         "step3": {
           "type": "step",
           "settings": {
-            "title": "We Print & Ship"
+            "title": "Approve, Pick a Size & Order"
           }
         }
       },
@@ -117,7 +117,7 @@
       "settings": {
         "heading": "How It Works",
         "heading_size": "h1",
-        "subheading": "From photo to figurine in three simple steps",
+        "subheading": "Create your design for free before you order",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -276,8 +276,8 @@
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Start Your Mini-Me",
-            "button_link": "/products/mini-me",
+            "button_label": "Design for Free",
+            "button_link": "https://studio.everything3dindia.com/",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",

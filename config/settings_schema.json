@@ -8,6 +8,16 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "Figurine Studio",
+    "settings": [
+      {
+        "type": "url",
+        "id": "figurine_studio_url",
+        "label": "Studio URL"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
