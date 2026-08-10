@@ -29,8 +29,8 @@
         "buttons": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Design for Free",
-            "button_link_1": "https://studio.everything3dindia.com/",
+            "button_label_1": "Create Yours Now",
+            "button_link_1": "/products/mini-me",
             "button_style_secondary_1": false,
             "button_label_2": "Button label",
             "button_link_2": "",
@@ -276,8 +276,8 @@
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Design for Free",
-            "button_link": "https://studio.everything3dindia.com/",
+            "button_label": "Start Your Mini-Me",
+            "button_link": "/products/mini-me",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",

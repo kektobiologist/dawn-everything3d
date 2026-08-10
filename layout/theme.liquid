@@ -7,23 +7,6 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
-    {%- liquid
-      assign figurine_studio_url = settings.figurine_studio_url | default: 'https://studio.everything3dindia.com/'
-      assign legacy_figurine_product_handles = 'couple-mini-me-figurine,disney-style-single-mini-me-figurine,doctor-figurine-single,family-figurine-pixar-style,figurine-with-pet-pixar-style,figurine-with-pet-pixar-style-copy' | split: ','
-      assign redirect_to_figurine_studio = false
-
-      if request.page_type == 'collection' and collection.handle == 'mini-me-figurine'
-        assign redirect_to_figurine_studio = true
-      elsif request.page_type == 'product' and legacy_figurine_product_handles contains product.handle
-        assign redirect_to_figurine_studio = true
-      endif
-    -%}
-
-    {%- if redirect_to_figurine_studio -%}
-      <meta http-equiv="refresh" content="0;url={{ figurine_studio_url | escape }}">
-      <script>window.location.replace({{ figurine_studio_url | json }});</script>
-    {%- endif -%}
-
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
