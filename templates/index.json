@@ -73,13 +73,72 @@
         "mobile_height": 50,
         "show_overlay": false,
         "overlay_opacity": 25,
-        "heading": "Turn your favorite moments into lasting memories",
+        "badge_text": "✨ New: AI Figurine Studio — 10% launch discount",
+        "heading": "Design your own figurine with AI",
         "desktop_heading_size": "h0",
         "mobile_heading_size": "h2",
-        "subheading": "Pixar-inspired figurines of the people you love. Design previews are free — you only pay when you order.",
+        "subheading": "Upload a photo in our new Figurine Studio and see free Pixar-style previews in minutes. 10% off every Studio order — automatically applied.",
         "button_label": "Create Your Figurine",
         "button_link": "https://studio.everything3dindia.com/",
         "color_scheme": "scheme-1"
+      }
+    },
+    "studio_spotlight": {
+      "type": "studio-spotlight",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "text": "Free AI design previews from a single photo"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "text": "Unlimited revisions — refine until it's perfect"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "text": "Order in a few taps — 13, 15 or 18 cm sizes"
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "text": "3D printed & hand-finished in Bangalore, shipped across India"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ],
+      "settings": {
+        "eyebrow": "✨ Introducing Figurine Studio",
+        "heading": "Design it yourself, in minutes",
+        "heading_size": "h0",
+        "subheading": "<p>No more waiting for renders on WhatsApp. Upload a photo and our AI creates Pixar-style previews of your figurine instantly. Tweak, iterate, and order — all on your own.</p>",
+        "show_discount": true,
+        "discount_badge": "10% OFF",
+        "discount_title": "Launch offer",
+        "discount_text": "Automatically applied to every order placed in the Studio.",
+        "button_label": "Launch Figurine Studio",
+        "button_link": "https://studio.everything3dindia.com/",
+        "note": "Free to try — you only pay when you order",
+        "media_position": "right",
+        "image_1": "",
+        "asset_image_1": "studio-step-designs.png",
+        "alt_1": "Figurine Studio showing two AI-generated figurine design previews",
+        "image_2": "",
+        "asset_image_2": "studio-step-order.png",
+        "alt_2": "Figurine Studio order screen with sizes and prices",
+        "color_scheme": "scheme-3",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "cta_section": {
@@ -188,7 +247,7 @@
       "settings": {
         "heading": "How It Works",
         "heading_size": "h1",
-        "subheading": "From photo to figurine in four simple steps",
+        "subheading": "From photo to figurine in four simple steps — all inside the Figurine Studio",
         "autoplay": true,
         "autoplay_speed": 5000,
         "media_position": "left",
@@ -344,6 +403,42 @@
     "faq": {
       "type": "collapsible-content",
       "blocks": {
+        "faq_studio_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is the Figurine Studio?",
+            "icon": "lightning_bolt",
+            "row_content": "<p>Figurine Studio is our new AI-powered design tool. Upload a photo and it creates Pixar-style previews of your custom figurine in minutes. You can refine the design as much as you like and place your order right there — no WhatsApp back-and-forth needed.</p>",
+            "page": ""
+          }
+        },
+        "faq_studio_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is the design preview really free?",
+            "icon": "check_mark",
+            "row_content": "<p>Yes. Uploading your photo and seeing AI-generated design previews in the Figurine Studio is completely free. You only pay when you approve a design and place your order.</p>",
+            "page": ""
+          }
+        },
+        "faq_studio_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I get the 10% launch discount?",
+            "icon": "price_tag",
+            "row_content": "<p>Just place your order through the Figurine Studio — the 10% launch discount is applied automatically at checkout. No coupon code needed.</p>",
+            "page": ""
+          }
+        },
+        "faq_studio_4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I still order over WhatsApp?",
+            "icon": "chat_bubble",
+            "row_content": "<p>Of course! If you prefer the old way, you can still message us your photos on WhatsApp and we'll design your figurine for you. Do note that the 10% launch discount applies only to orders placed through the Figurine Studio.</p>",
+            "page": ""
+          }
+        },
         "faq_1": {
           "type": "collapsible_row",
           "settings": {
@@ -356,9 +451,9 @@
         "faq_2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What kind of photos should I send?",
+            "heading": "What kind of photos should I upload?",
             "icon": "eye",
-            "row_content": "<p>Send clear, well-lit photos showing the face(s) from the front. Multiple angles help us capture likeness better. Avoid blurry or heavily filtered photos.</p>",
+            "row_content": "<p>Upload clear, well-lit photos showing the face(s) from the front. Multiple angles help the AI capture likeness better. Avoid blurry or heavily filtered photos.</p>",
             "page": ""
           }
         },
@@ -400,6 +495,10 @@
         }
       },
       "block_order": [
+        "faq_studio_1",
+        "faq_studio_2",
+        "faq_studio_3",
+        "faq_studio_4",
         "faq_1",
         "faq_2",
         "faq_3",
@@ -421,16 +520,69 @@
         "padding_top": 52,
         "padding_bottom": 52
       }
+    },
+    "final_cta": {
+      "type": "rich-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "Limited time",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ready to create yours?",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Design your figurine in minutes with our AI Figurine Studio — and get 10% off while the launch offer lasts.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Launch Figurine Studio",
+            "button_link": "https://studio.everything3dindia.com/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
     "hero",
+    "studio_spotlight",
     "cta_section",
     "how_it_works",
     "render_vs_print",
     "gallery",
     "logo_bar",
     "testimonials",
-    "faq"
+    "faq",
+    "final_cta"
   ]
 }

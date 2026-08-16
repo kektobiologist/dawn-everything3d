@@ -43,7 +43,65 @@
       </div>
     {%- endif -%}
   </div>
+
+  {%- if section.settings.show_studio_promo -%}
+    {%- assign handle = collection.handle | default: '' -%}
+    {%- if handle contains 'figurine' or handle contains 'mini-me' -%}
+      <div class="collection-hero__studio-promo page-width">
+        <a class="collection-hero__studio-promo-card" href="{{ section.settings.studio_promo_link }}">
+          <span class="collection-hero__studio-promo-badge">{{ section.settings.studio_promo_badge }}</span>
+          <span class="collection-hero__studio-promo-text">
+            <strong>{{ section.settings.studio_promo_title }}</strong>
+            {{ section.settings.studio_promo_text }}
+          </span>
+          <span class="collection-hero__studio-promo-cta">{{ section.settings.studio_promo_button_label }} →</span>
+        </a>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
 </div>
+
+{%- if section.settings.show_studio_promo -%}
+  {%- assign promo_handle = collection.handle | default: '' -%}
+  {%- if promo_handle contains 'figurine' or promo_handle contains 'mini-me' -%}
+    {%- style -%}
+      .collection-hero__studio-promo {
+        margin-top: 1.5rem;
+      }
+      .collection-hero__studio-promo-card {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        flex-wrap: wrap;
+        padding: 1.4rem 1.8rem;
+        border-radius: 1.2rem;
+        background: #242833;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .collection-hero__studio-promo-badge {
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 1.4rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 0.9rem;
+        background: #ffb020;
+        color: #1a1a1a;
+        transform: rotate(-2deg);
+      }
+      .collection-hero__studio-promo-text {
+        flex: 1 1 24rem;
+        font-size: 1.4rem;
+        line-height: 1.5;
+      }
+      .collection-hero__studio-promo-cta {
+        font-size: 1.4rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+    {%- endstyle -%}
+  {%- endif -%}
+{%- endif -%}
 
 {% schema %}
 {
@@ -71,6 +129,45 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Figurine Studio promo"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_studio_promo",
+      "default": true,
+      "label": "Show Studio promo on figurine collections"
+    },
+    {
+      "type": "text",
+      "id": "studio_promo_badge",
+      "default": "10% OFF",
+      "label": "Badge text"
+    },
+    {
+      "type": "text",
+      "id": "studio_promo_title",
+      "default": "New: Design your own figurine with AI",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "studio_promo_text",
+      "default": "Upload a photo in our Figurine Studio, get free previews, and get 10% off automatically on Studio orders.",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "studio_promo_button_label",
+      "default": "Launch Figurine Studio",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "studio_promo_link",
+      "label": "Link"
     }
   ]
 }

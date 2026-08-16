@@ -96,6 +96,10 @@
 
     {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.button_label != blank -%}
       <div class="hero-responsive__content-mobile color-{{ section.settings.color_scheme }}">
+        {%- if section.settings.badge_text != blank -%}
+          <p class="hero-responsive__badge">{{ section.settings.badge_text | escape }}</p>
+        {%- endif -%}
+
         {%- if section.settings.heading != blank -%}
           <h1 class="hero-responsive__heading hero-responsive__heading--{{ section.settings.mobile_heading_size }}">
             {{ section.settings.heading }}
@@ -194,6 +198,10 @@
     {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.button_label != blank -%}
       <div class="hero-responsive__content-desktop color-{{ section.settings.color_scheme }}">
         <div class="hero-responsive__content-inner">
+          {%- if section.settings.badge_text != blank -%}
+            <p class="hero-responsive__badge">{{ section.settings.badge_text | escape }}</p>
+          {%- endif -%}
+
           {%- if section.settings.heading != blank -%}
             <h1 class="hero-responsive__heading hero-responsive__heading--{{ section.settings.desktop_heading_size }}">
               {{ section.settings.heading }}
@@ -320,6 +328,12 @@
     {
       "type": "header",
       "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "info": "Optional pill shown above the heading, e.g. a launch offer"
     },
     {
       "type": "text",
