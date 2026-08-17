@@ -277,6 +277,10 @@
   </div>
 </div>
 
+{%- if section.settings.countdown_end != blank -%}
+  {% render 'countdown-timer' %}
+{%- endif -%}
+
 {%- if slide_count > 1 -%}
   <script>
     (() => {
