@@ -54,6 +54,9 @@
                 <strong>{{ section.settings.discount_title | escape }}</strong>
               {%- endif -%}
               {{ section.settings.discount_text | escape }}
+              {%- if section.settings.countdown_end != blank -%}
+                <span class="countdown-timer studio-spotlight__countdown" data-countdown-end="{{ section.settings.countdown_end | escape }}" data-countdown-label="⏰ Ends in "></span>
+              {%- endif -%}
             </p>
           </div>
         {%- endif -%}
@@ -128,6 +131,10 @@
   </div>
 </div>
 
+{%- if section.settings.show_discount and section.settings.countdown_end != blank -%}
+  {% render 'countdown-timer' %}
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Studio Spotlight",
@@ -192,6 +199,12 @@
       "id": "discount_text",
       "label": "Discount text",
       "default": "Automatically applied to every order placed in the Studio."
+    },
+    {
+      "type": "text",
+      "id": "countdown_end",
+      "label": "Offer end date",
+      "info": "ISO date with timezone, e.g. 2026-08-31T00:00:00+05:30. Leave blank to hide the countdown."
     },
     {
       "type": "header",

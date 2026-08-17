@@ -18,7 +18,8 @@
           "type": "announcement",
           "settings": {
             "text": "🎉 Launch offer: 10% off all figurines designed in our new AI Figurine Studio",
-            "link": "https://studio.everything3dindia.com/"
+            "link": "https://studio.everything3dindia.com/",
+            "show_countdown": true
           }
         },
         "announcement-bar-1": {
@@ -36,6 +37,7 @@
       "settings": {
         "auto_rotate": true,
         "change_slides_speed": 5,
+        "countdown_end": "2026-08-31T00:00:00+05:30",
         "color_scheme": "scheme-1",
         "show_line_separator": true,
         "show_social": false,
