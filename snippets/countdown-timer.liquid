@@ -1,0 +1,58 @@
+{% comment %}
+  Renders the shared countdown-timer script (once per page). Sections output
+  their own elements:
+
+    <span class="countdown-timer" data-countdown-end="2026-08-31T00:00:00+05:30"
+          data-countdown-label="Ends in "></span>
+
+  The script fills every [data-countdown-end] element with a live "13d 07h 42m
+  33s" style countdown and hides it once the deadline passes (or if the date
+  is invalid).
+{% endcomment %}
+
+<style>
+  .countdown-timer {
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 749px) {
+    .announcement-bar__message .countdown-timer {
+      display: block;
+      margin-top: 0.2rem;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    if (window.__countdownTimerInit) return;
+    window.__countdownTimerInit = true;
+
+    const pad = (n) => String(n).padStart(2, '0');
+
+    const tick = () => {
+      document.querySelectorAll('[data-countdown-end]').forEach((el) => {
+        const end = new Date(el.dataset.countdownEnd).getTime();
+        const diff = Math.floor((end - Date.now()) / 1000);
+
+        if (isNaN(end) || diff <= 0) {
+          el.style.display = 'none';
+          return;
+        }
+
+        const d = Math.floor(diff / 86400);
+        const h = Math.floor((diff % 86400) / 3600);
+        const m = Math.floor((diff % 3600) / 60);
+        const s = diff % 60;
+        const label = el.dataset.countdownLabel || '';
+
+        el.textContent = `${label}${d > 0 ? `${d}d ` : ''}${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+      });
+    };
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
