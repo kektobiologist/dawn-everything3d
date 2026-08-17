@@ -108,6 +108,13 @@
   font-size: 1.7rem;
 }
 
+.studio-spotlight__countdown {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 1.5rem;
+  color: #ffb020;
+}
+
 .studio-spotlight__cta-row {
   display: flex;
   flex-wrap: wrap;
