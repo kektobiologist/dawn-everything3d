@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "🎉 Launch offer: 10% off all figurines designed in our new AI Figurine Studio",
+            "text": "🎉 10% off all figurines in our new AI Studio",
             "link": "https://studio.everything3dindia.com/",
             "show_countdown": true
           }
