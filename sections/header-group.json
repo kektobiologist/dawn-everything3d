@@ -11,40 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "🎉 10% off all figurines in our new AI Studio",
-            "link": "https://studio.everything3dindia.com/",
-            "show_countdown": true
-          }
-        },
-        "announcement-bar-1": {
-          "type": "announcement",
-          "settings": {
-            "text": "3D Printed products made to order!",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0",
-        "announcement-bar-1"
-      ],
-      "settings": {
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "countdown_end": "2026-08-31T00:00:00+05:30",
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
-    },
     "header": {
       "type": "header",
       "settings": {
@@ -66,7 +32,6 @@
     }
   },
   "order": [
-    "announcement-bar",
     "header"
   ]
 }
