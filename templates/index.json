@@ -132,10 +132,8 @@
         "button_link": "https://studio.everything3dindia.com/",
         "note": "Free to try — you only pay when you order",
         "media_position": "right",
-        "image_1": "",
         "asset_image_1": "studio-step-designs.png",
         "alt_1": "Figurine Studio showing two AI-generated figurine design previews",
-        "image_2": "",
         "asset_image_2": "studio-step-order.png",
         "alt_2": "Figurine Studio order screen with sizes and prices",
         "color_scheme": "scheme-3",
@@ -149,7 +147,7 @@
         "couple": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/couple-nobg.png",
+            "image": "shopify://shop_images/nobg-couple.png",
             "title": "Couple Figurine",
             "price": "From ₹6,999",
             "button_label": "Order Now",
@@ -159,7 +157,7 @@
         "single": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/single-nobg.png",
+            "image": "shopify://shop_images/nobg-single_5b5d3a1a-c8e6-4931-a126-aa902f04a0bf.png",
             "title": "Single Figurine",
             "price": "From ₹4,499",
             "button_label": "Order Now",
@@ -184,7 +182,6 @@
           "settings": {
             "title": "Upload a Clear Photo",
             "description": "<p>Open Figurine Studio and upload a clear photo of the person, couple, family, or pet.</p>",
-            "image": "",
             "asset_image": "studio-step-upload.png",
             "alt_text": "Figurine Studio asking the customer to upload a clear couple photo",
             "image_width": 710,
@@ -199,7 +196,6 @@
           "settings": {
             "title": "Pick Your Design",
             "description": "<p>Choose from two free design previews created from your photo.</p>",
-            "image": "",
             "asset_image": "studio-step-designs.png",
             "alt_text": "Figurine Studio showing two free figurine design previews to choose from",
             "image_width": 710,
@@ -214,7 +210,6 @@
           "settings": {
             "title": "Refine & Approve",
             "description": "<p>Request changes at no extra cost until you’re happy with the design.</p>",
-            "image": "",
             "asset_image": "studio-step-revisions.png",
             "alt_text": "Figurine Studio showing a requested design revision ready to keep or revise",
             "image_width": 710,
@@ -229,7 +224,6 @@
           "settings": {
             "title": "Choose a Size & Order",
             "description": "<p>Select 13 cm, 15 cm, or 18 cm and place your order. We’ll 3D print it in Bangalore and ship it across India.</p>",
-            "image": "",
             "asset_image": "studio-step-order.png",
             "alt_text": "Figurine Studio order card with figurine sizes, prices, base text, and WhatsApp number",
             "image_width": 710,
@@ -311,7 +305,7 @@
         "video_33aUXX": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/54d0b3ebd69c457b987b9d2bad0a71e6.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/56d8cb69344349ea82602d55dc228d40.mp4",
             "youtube_url": "",
             "caption": "",
             "featured": false
