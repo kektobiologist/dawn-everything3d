@@ -281,7 +281,7 @@
         "img_5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_4939.jpg",
+            "image": "shopify://shop_images/8F4844F9-8F7E-4615-B9E0-9607C7C545B6.jpg",
             "caption": "",
             "featured": false
           }
@@ -289,7 +289,7 @@
         "image_pg4Exy": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_5586.heic",
+            "image": "shopify://shop_images/12D12C96-458D-41CB-8F83-92CF112DA1AC.jpg",
             "caption": "",
             "featured": false
           }
@@ -297,7 +297,7 @@
         "image_HHxk9H": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/sagility_for_website.png",
+            "image": "shopify://shop_images/WhatsApp_Image_2026-08-28_at_9.45.20_AM.jpg",
             "caption": "",
             "featured": false
           }
@@ -314,7 +314,7 @@
         "img_1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_5547.heic",
+            "image": "shopify://shop_images/8F8C0C8E-CAC4-4F5D-9E86-38BA164694EB.jpg",
             "caption": "",
             "featured": true
           }
@@ -322,7 +322,7 @@
         "img_2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/IMG_4666_dc753655-afea-437f-808a-b362aa49b0cb.heic",
+            "image": "shopify://shop_images/1DB4DF84-9768-4E15-B26C-1A553C5EDAE1.jpg",
             "caption": "",
             "featured": false
           }
@@ -339,9 +339,8 @@
         "video_1": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/94fb981022bd40a492638e7a9b09a444.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/f9a0c50ee8884974b1951092637bd711.mp4",
             "youtube_url": "",
-            "poster": "shopify://shop_images/WhatsApp_Image_2026-01-19_at_7.58.54_PM.jpg",
             "caption": "3D Printed couple figurine",
             "featured": false
           }
