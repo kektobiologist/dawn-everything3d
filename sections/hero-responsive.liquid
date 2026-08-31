@@ -100,30 +100,6 @@
           <p class="hero-responsive__badge">{{ section.settings.badge_text | escape }}</p>
         {%- endif -%}
 
-        {%- if section.settings.countdown_end != blank -%}
-          <div class="hero-responsive__countdown" data-countdown-boxes data-countdown-end="{{ section.settings.countdown_end | escape }}" role="timer" aria-label="Offer time remaining">
-            <div class="hero-responsive__countdown-unit">
-              <span class="hero-responsive__countdown-num" data-cd="days">00</span>
-              <span class="hero-responsive__countdown-label">days</span>
-            </div>
-            <span class="hero-responsive__countdown-sep" aria-hidden="true">:</span>
-            <div class="hero-responsive__countdown-unit">
-              <span class="hero-responsive__countdown-num" data-cd="hours">00</span>
-              <span class="hero-responsive__countdown-label">hrs</span>
-            </div>
-            <span class="hero-responsive__countdown-sep" aria-hidden="true">:</span>
-            <div class="hero-responsive__countdown-unit">
-              <span class="hero-responsive__countdown-num" data-cd="minutes">00</span>
-              <span class="hero-responsive__countdown-label">min</span>
-            </div>
-            <span class="hero-responsive__countdown-sep" aria-hidden="true">:</span>
-            <div class="hero-responsive__countdown-unit">
-              <span class="hero-responsive__countdown-num" data-cd="seconds">00</span>
-              <span class="hero-responsive__countdown-label">sec</span>
-            </div>
-          </div>
-        {%- endif -%}
-
         {%- if section.settings.heading != blank -%}
           <h1 class="hero-responsive__heading hero-responsive__heading--{{ section.settings.mobile_heading_size }}">
             {{ section.settings.heading }}
@@ -226,30 +202,6 @@
             <p class="hero-responsive__badge">{{ section.settings.badge_text | escape }}</p>
           {%- endif -%}
 
-          {%- if section.settings.countdown_end != blank -%}
-            <div class="hero-responsive__countdown" data-countdown-boxes data-countdown-end="{{ section.settings.countdown_end | escape }}" role="timer" aria-label="Offer time remaining">
-              <div class="hero-responsive__countdown-unit">
-                <span class="hero-responsive__countdown-num" data-cd="days">00</span>
-                <span class="hero-responsive__countdown-label">days</span>
-              </div>
-              <span class="hero-responsive__countdown-sep" aria-hidden="true">:</span>
-              <div class="hero-responsive__countdown-unit">
-                <span class="hero-responsive__countdown-num" data-cd="hours">00</span>
-                <span class="hero-responsive__countdown-label">hrs</span>
-              </div>
-              <span class="hero-responsive__countdown-sep" aria-hidden="true">:</span>
-              <div class="hero-responsive__countdown-unit">
-                <span class="hero-responsive__countdown-num" data-cd="minutes">00</span>
-                <span class="hero-responsive__countdown-label">min</span>
-              </div>
-              <span class="hero-responsive__countdown-sep" aria-hidden="true">:</span>
-              <div class="hero-responsive__countdown-unit">
-                <span class="hero-responsive__countdown-num" data-cd="seconds">00</span>
-                <span class="hero-responsive__countdown-label">sec</span>
-              </div>
-            </div>
-          {%- endif -%}
-
           {%- if section.settings.heading != blank -%}
             <h1 class="hero-responsive__heading hero-responsive__heading--{{ section.settings.desktop_heading_size }}">
               {{ section.settings.heading }}
@@ -276,10 +228,6 @@
     </div>
   </div>
 </div>
-
-{%- if section.settings.countdown_end != blank -%}
-  {% render 'countdown-timer' %}
-{%- endif -%}
 
 {%- if slide_count > 1 -%}
   <script>
@@ -385,13 +333,7 @@
       "type": "text",
       "id": "badge_text",
       "label": "Badge text",
-      "info": "Optional pill shown above the heading, e.g. a launch offer"
-    },
-    {
-      "type": "text",
-      "id": "countdown_end",
-      "label": "Countdown end date",
-      "info": "ISO date with timezone, e.g. 2026-08-31T00:00:00+05:30. Shows a big live timer. Leave blank to hide."
+      "info": "Optional pill shown above the heading"
     },
     {
       "type": "text",

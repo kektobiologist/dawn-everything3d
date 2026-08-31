@@ -72,49 +72,6 @@
   margin-top: 0.1rem;
 }
 
-.studio-spotlight__discount {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-  padding: 1.8rem 2.2rem;
-  border-radius: 1.6rem;
-  border: 2px dashed rgba(var(--color-foreground), 0.35);
-  background: rgba(var(--color-foreground), 0.06);
-  margin: 0 0 2.4rem;
-}
-
-.studio-spotlight__discount-badge {
-  flex-shrink: 0;
-  font-size: 2.4rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  padding: 1.2rem 1.6rem;
-  border-radius: 1.2rem;
-  background: #ffb020;
-  color: #1a1a1a;
-  transform: rotate(-3deg);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-}
-
-.studio-spotlight__discount-text {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
-.studio-spotlight__discount-text strong {
-  display: block;
-  font-size: 1.7rem;
-}
-
-.studio-spotlight__countdown {
-  display: block;
-  margin-top: 0.8rem;
-  font-size: 1.5rem;
-  color: #ffb020;
-}
-
 .studio-spotlight__cta-row {
   display: flex;
   flex-wrap: wrap;
@@ -207,19 +164,6 @@
   .studio-spotlight__feature svg {
     width: 2rem;
     height: 2rem;
-  }
-
-  .studio-spotlight__discount {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.2rem;
-    padding: 1.4rem 1.6rem;
-    margin-bottom: 1.8rem;
-  }
-
-  .studio-spotlight__discount-badge {
-    font-size: 2rem;
-    padding: 1rem 1.4rem;
   }
 
   .studio-spotlight__cta-row {

@@ -30,7 +30,7 @@
         "studio_promo": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"margin: 1.2rem 0; padding: 1.4rem 1.6rem; border-radius: 1.2rem; border: 2px dashed rgba(18,18,18,0.25); background: #f0f6ff;\"><p style=\"margin: 0 0 0.6rem; font-size: 1.5rem; font-weight: 600;\">✨ Want to design it yourself?</p><p style=\"margin: 0 0 1rem; font-size: 1.4rem; line-height: 1.5;\">Create free AI previews and iterate on your own in our new Figurine Studio — plus get <strong>10% off</strong> automatically on Studio orders.</p><a href=\"https://studio.everything3dindia.com/\" style=\"font-size: 1.4rem; font-weight: 600;\">Launch Figurine Studio →</a></div>"
+            "custom_liquid": "<div style=\"margin: 1.2rem 0; padding: 1.4rem 1.6rem; border-radius: 1.2rem; border: 2px dashed rgba(18,18,18,0.25); background: #f0f6ff;\"><p style=\"margin: 0 0 0.6rem; font-size: 1.5rem; font-weight: 600;\">✨ Want to design it yourself?</p><p style=\"margin: 0 0 1rem; font-size: 1.4rem; line-height: 1.5;\">Create free AI previews and refine your design on your own in our Figurine Studio. You only pay when you order.</p><a href=\"https://studio.everything3dindia.com/\" style=\"font-size: 1.4rem; font-weight: 600;\">Launch Figurine Studio →</a></div>"
           }
         },
         "variant_picker": {
