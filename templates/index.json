@@ -73,12 +73,11 @@
         "mobile_height": 50,
         "show_overlay": false,
         "overlay_opacity": 25,
-        "badge_text": "✨ LAUNCH OFFER — 10% OFF ALL STUDIO ORDERS",
-        "countdown_end": "2026-08-31T00:00:00+05:30",
-        "heading": "",
+        "badge_text": "✨ AI FIGURINE STUDIO",
+        "heading": "Design your own figurine with AI",
         "desktop_heading_size": "h0",
         "mobile_heading_size": "h2",
-        "subheading": "Auto-applied at checkout. No code needed.",
+        "subheading": "Upload a photo and see free Pixar-style previews in minutes.",
         "button_label": "Create Your Figurine",
         "button_link": "https://studio.everything3dindia.com/",
         "color_scheme": "scheme-1"
@@ -123,11 +122,6 @@
         "heading": "Design it yourself, in minutes",
         "heading_size": "h0",
         "subheading": "<p>Upload a photo, get Pixar-style previews instantly. Tweak, iterate, order — all on your own.</p>",
-        "show_discount": false,
-        "discount_badge": "10% OFF",
-        "discount_title": "Launch offer",
-        "discount_text": "Automatically applied to every order placed in the Studio.",
-        "countdown_end": "",
         "button_label": "Launch Figurine Studio",
         "button_link": "https://studio.everything3dindia.com/",
         "note": "Free to try — you only pay when you order",
@@ -416,21 +410,12 @@
             "page": ""
           }
         },
-        "faq_studio_3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How do I get the 10% launch discount?",
-            "icon": "price_tag",
-            "row_content": "<p>Just place your order through the Figurine Studio — the 10% launch discount is applied automatically at checkout. No coupon code needed.</p>",
-            "page": ""
-          }
-        },
         "faq_studio_4": {
           "type": "collapsible_row",
           "settings": {
             "heading": "Can I still order over WhatsApp?",
             "icon": "chat_bubble",
-            "row_content": "<p>Of course! If you prefer the old way, you can still message us your photos on WhatsApp and we'll design your figurine for you. Do note that the 10% launch discount applies only to orders placed through the Figurine Studio.</p>",
+            "row_content": "<p>Of course! If you prefer the old way, you can still message us your photos on WhatsApp and we'll design your figurine for you.</p>",
             "page": ""
           }
         },
@@ -492,7 +477,6 @@
       "block_order": [
         "faq_studio_1",
         "faq_studio_2",
-        "faq_studio_3",
         "faq_studio_4",
         "faq_1",
         "faq_2",
@@ -522,7 +506,7 @@
         "caption": {
           "type": "caption",
           "settings": {
-            "caption": "Limited time",
+            "caption": "Free to try",
             "text_style": "subtitle",
             "text_size": "medium"
           }
@@ -537,7 +521,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Design your figurine in minutes with our AI Figurine Studio — and get 10% off while the launch offer lasts.</p>"
+            "text": "<p>Design your figurine in minutes with our AI Figurine Studio. Preview and refine it for free — you only pay when you order.</p>"
           }
         },
         "button": {
