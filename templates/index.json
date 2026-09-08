@@ -424,7 +424,7 @@
           "settings": {
             "heading": "How long does it take to receive my figurine?",
             "icon": "stopwatch",
-            "row_content": "<p>After you approve your design and place the order, your finished figurine ships within 48 hours. Typical delivery is 2-5 business days from shipping depending on your location.</p>",
+            "row_content": "<p>After you approve your design and place the order, your figurine is made and dispatched within 7 days. Typical delivery is a further 2-5 business days depending on your location. These are estimates, not guaranteed dates — if you have a fixed deadline, please confirm it with us in writing before you order.</p>",
             "page": ""
           }
         },
@@ -472,6 +472,33 @@
             "row_content": "<p>Yes — since your figurine is fully 3D printed in-house, we can only use <strong>solid colors</strong> (no gradients or photo-like shading). Each figurine is typically limited to <strong>up to 5 colors</strong> for the cleanest and best-looking finish.</p>",
             "page": ""
           }
+        },
+        "faq_likeness": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How close will the figurine look to my photo?",
+            "icon": "eye",
+            "row_content": "<p>The design preview you approve is what we make. Because each figurine is 3D printed and hand-painted, some things are simplified along the way: fine details like hair and facial texture, clothing patterns turned into solid colours, small pose changes so it stands safely, and visible layer lines on the surface. Printed colours can also look different from your screen.</p><p>This is why we let you refine the preview for free as many times as you like — <strong>approving a design means you're happy with the likeness</strong>. Take your time at that stage. Full details in our <a href=\"/policies/refund-policy\">Cancellation &amp; Refund Policy</a>.</p>",
+            "page": ""
+          }
+        },
+        "faq_cancel": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I cancel my order?",
+            "icon": "return",
+            "row_content": "<p>Yes, but it depends on the stage. Previews are free and you're charged nothing until you approve a design and pay.</p><p><strong>Before printing starts</strong> — full refund. We usually begin printing within 24 hours of your order, so message us quickly.<br><strong>After printing starts, before dispatch</strong> — you can still cancel, with a ₹2,000 per figurine production fee deducted.<br><strong>After dispatch</strong> — the order can't be cancelled, since your figurine is made only for you and can't be resold.</p><p>Ask us any time and we'll tell you what stage your order is at. Full terms: <a href=\"/policies/refund-policy\">Cancellation &amp; Refund Policy</a>.</p>",
+            "page": ""
+          }
+        },
+        "faq_defect": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What if my figurine arrives damaged or wrong?",
+            "icon": "heart",
+            "row_content": "<p>We fix it free. If a person or pet is missing, the base text or size is wrong, the outfit colour or pose doesn't match your approved design, or it arrives broken — we reprint and reship at no cost to you.</p><p>Message us on <a href=\"https://wa.me/917892554719\">WhatsApp</a> or email <a href=\"mailto:juthika@everything3dindia.com\">juthika@everything3dindia.com</a> <strong>within 48 hours of delivery</strong> with photos. For transit damage, please send an unboxing video too. See our <a href=\"/policies/refund-policy\">Cancellation &amp; Refund Policy</a>.</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -483,7 +510,10 @@
         "faq_3",
         "faq_4",
         "faq_5",
-        "faq_6"
+        "faq_6",
+        "faq_likeness",
+        "faq_cancel",
+        "faq_defect"
       ],
       "settings": {
         "caption": "",
