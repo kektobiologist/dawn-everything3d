@@ -1,12 +1,14 @@
 {%- assign star_count = stars | default: 5 | plus: 0 -%}
 
-<div class="testimonial-card" {{ shopify_attributes }}>
-  <div class="testimonial-card__stars">
+<div class="testimonial-card" itemprop="review" itemscope itemtype="https://schema.org/Review" {{ shopify_attributes }}>
+  <div class="testimonial-card__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+    <meta itemprop="ratingValue" content="{{ star_count }}">
+    <meta itemprop="bestRating" content="5">
     {%- for i in (1..star_count) -%}
       <span class="star">★</span>
     {%- endfor -%}
   </div>
-  <blockquote class="testimonial-card__quote">"{{ quote | escape }}"</blockquote>
+  <blockquote class="testimonial-card__quote" itemprop="reviewBody">"{{ quote | escape }}"</blockquote>
   <div class="testimonial-card__author">
     {%- if avatar != blank -%}
       <div class="testimonial-card__avatar">
@@ -14,7 +16,7 @@
       </div>
     {%- endif -%}
     <div class="testimonial-card__info">
-      <cite class="testimonial-card__name">{{ author_name | escape }}</cite>
+      <cite class="testimonial-card__name" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ author_name | escape }}</span></cite>
       {%- if author_title != blank -%}
         <span class="testimonial-card__title">{{ author_title | escape }}</span>
       {%- endif -%}

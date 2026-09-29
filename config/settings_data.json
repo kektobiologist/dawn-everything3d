@@ -11,7 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/e3d_logo.png",
     "logo_width": 90,
-    "favicon": "shopify://shop_images/Screenshot_2025-12-03_at_9.48.10_AM.png",
+    "favicon": "shopify://shop_images/everything-3d-india-logo-mark.png",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -111,7 +111,7 @@
     "brand_description": "<p></p>",
     "brand_image": "shopify://shop_images/e3d_logo.png",
     "brand_image_width": 100,
-    "og_image": "shopify://shop_images/Untitled_1.png",
+    "og_image": "shopify://shop_images/couple-photo-to-figurine-yellow-lehenga-6.png",
     "social_facebook_link": "",
     "social_instagram_link": "https://www.instagram.com/everything_3d_india/",
     "social_youtube_link": "",
@@ -162,14 +162,12 @@
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": true,
         "settings": {
+          "greeting_message": "",
           "button_color": "#000000",
-          "secondary_color": "#ffffff",
-          "ternary_color": "#6a6a6a",
           "button_icon": "chat_bubble",
           "button_text": "chat_with_us",
           "button_horizontal_position": "bottom_right",
-          "button_vertical_position": "lowest",
-          "greeting_message": ""
+          "button_vertical_position": "lowest"
         }
       },
       "12104266310658676657": {

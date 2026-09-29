@@ -13,7 +13,9 @@
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
 
-      <div class="testimonials__scroller" tabindex="0">
+      <div class="testimonials__scroller" tabindex="0" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="{{ shop.name | escape }}">
+        <meta itemprop="url" content="{{ request.origin }}">
         {%- if section.blocks.size > 0 -%}
           {%- for block in section.blocks -%}
             {%- render 'testimonial-card',

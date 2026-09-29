@@ -740,9 +740,7 @@
       endif
     -%}
 
-    <script type="application/ld+json">
-      {{ product | structured_data }}
-    </script>
+    {% render 'product-structured-data', product: product %}
   </div>
 </product-info>
 

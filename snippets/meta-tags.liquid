@@ -21,6 +21,15 @@
 
 {%- liquid
   assign og_image = page_image
+  case request.page_type
+    when 'product', 'article'
+    when 'collection'
+      assign og_image = collection.image | default: collection.featured_image | default: page_image
+    else
+      if settings.og_image != blank
+        assign og_image = settings.og_image
+      endif
+  endcase
   if og_image == blank and settings.og_image != blank
     assign og_image = settings.og_image
   endif

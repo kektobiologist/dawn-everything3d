@@ -1,0 +1,34 @@
+{% comment %}
+  Offer JSON for product-structured-data. Shipping is ₹100, free above ₹4,000.
+{% endcomment %}
+{%- liquid
+  assign shipping_rate = 100
+  if variant.price >= 400000
+    assign shipping_rate = 0
+  endif
+-%}
+{
+  "@type": "Offer",
+  "url": {{ product_url | append: '?variant=' | append: variant.id | json }},
+  "price": {{ variant.price | divided_by: 100.0 | json }},
+  "priceCurrency": {{ cart.currency.iso_code | json }},
+  "availability": {% if variant.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},
+  "itemCondition": "https://schema.org/NewCondition",
+  "seller": { "@id": {{ request.origin | append: '/#organization' | json }} },
+  "shippingDetails": {
+    "@type": "OfferShippingDetails",
+    "shippingRate": { "@type": "MonetaryAmount", "value": {{ shipping_rate }}, "currency": "INR" },
+    "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" },
+    "deliveryTime": {
+      "@type": "ShippingDeliveryTime",
+      "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 7, "unitCode": "DAY" },
+      "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY" }
+    }
+  },
+  "hasMerchantReturnPolicy": {
+    "@type": "MerchantReturnPolicy",
+    "applicableCountry": "IN",
+    "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+    "url": {{ request.origin | append: routes.root_url | append: 'policies/refund-policy' | replace: '//policies', '/policies' | json }}
+  }
+}

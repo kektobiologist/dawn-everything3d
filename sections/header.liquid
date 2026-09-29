@@ -426,26 +426,50 @@
   customElements.define('sticky-header', StickyHeader);
 {% endjavascript %}
 
+{%- liquid
+  assign social_links = settings.social_twitter_link | append: '|' | append: settings.social_facebook_link | append: '|' | append: settings.social_pinterest_link | append: '|' | append: settings.social_instagram_link | append: '|' | append: settings.social_tiktok_link | append: '|' | append: settings.social_tumblr_link | append: '|' | append: settings.social_snapchat_link | append: '|' | append: settings.social_youtube_link | append: '|' | append: settings.social_vimeo_link | split: '|'
+  assign social_links = social_links | compact | uniq
+-%}
 <script type="application/ld+json">
   {
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": {{ request.origin | append: '/#organization' | json }},
     "name": {{ shop.name | json }},
+    "url": {{ request.origin | json }},
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
-    "sameAs": [
-      {{ settings.social_twitter_link | json }},
-      {{ settings.social_facebook_link | json }},
-      {{ settings.social_pinterest_link | json }},
-      {{ settings.social_instagram_link | json }},
-      {{ settings.social_tiktok_link | json }},
-      {{ settings.social_tumblr_link | json }},
-      {{ settings.social_snapchat_link | json }},
-      {{ settings.social_youtube_link | json }},
-      {{ settings.social_vimeo_link | json }}
+    "description": "Custom 3D printed figurines made from your photos. Design free AI previews in Figurine Studio, then we 3D print and hand-finish your figurine in Bangalore and ship across India.",
+    "email": "juthika@everything3dindia.com",
+    "telephone": "+91-78925-54719",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "areaServed": "IN",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+91-78925-54719",
+        "email": "juthika@everything3dindia.com",
+        "areaServed": "IN",
+        "availableLanguage": "English",
+        "url": "https://wa.me/917892554719"
+      }
     ],
-    "url": {{ request.origin | append: page.url | json }}
+    "sameAs": [
+      {%- assign first_link = true -%}
+      {%- for link in social_links -%}
+        {%- if link != blank -%}
+          {%- unless first_link %},{% endunless %}{{ link | strip | json }}
+          {%- assign first_link = false -%}
+        {%- endif -%}
+      {%- endfor -%}
+    ]
   }
 </script>
 

@@ -33,9 +33,9 @@
         "image_slide_aFUrph": {
           "type": "image_slide",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Apr_30_2026_01_53_47_PM.png",
+            "image": "shopify://shop_images/couple-photo-to-figurine-wedding.png",
             "asset_image": "",
-            "alt_text": "",
+            "alt_text": "Wedding photo turned into a custom 3D printed couple figurine in a saree and blue sherwani",
             "image_width": 1600,
             "image_height": 1600
           }
@@ -77,7 +77,7 @@
         "heading": "Design your own figurine with AI",
         "desktop_heading_size": "h0",
         "mobile_heading_size": "h2",
-        "subheading": "Upload a photo and see free Pixar-style previews in minutes.",
+        "subheading": "Upload a photo and see free cartoon-style previews in minutes.",
         "button_label": "Create Your Figurine",
         "button_link": "https://studio.everything3dindia.com/",
         "color_scheme": "scheme-1"
@@ -121,7 +121,7 @@
         "eyebrow": "✨ Introducing Figurine Studio",
         "heading": "Design it yourself, in minutes",
         "heading_size": "h0",
-        "subheading": "<p>Upload a photo, get Pixar-style previews instantly. Tweak, iterate, order — all on your own.</p>",
+        "subheading": "<p>Upload a photo, get cartoon-style previews instantly. Tweak, iterate, order — all on your own.</p>",
         "button_label": "Launch Figurine Studio",
         "button_link": "https://studio.everything3dindia.com/",
         "note": "Free to try — you only pay when you order",
@@ -275,7 +275,7 @@
         "img_5": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/8F4844F9-8F7E-4615-B9E0-9607C7C545B6.jpg",
+            "image": "shopify://shop_images/couple-figurine-love-message.jpg",
             "caption": "",
             "featured": false
           }
@@ -283,7 +283,7 @@
         "image_pg4Exy": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/12D12C96-458D-41CB-8F83-92CF112DA1AC.jpg",
+            "image": "shopify://shop_images/single-figurine-man-cross-legged.jpg",
             "caption": "",
             "featured": false
           }
@@ -291,7 +291,7 @@
         "image_HHxk9H": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2026-08-28_at_9.45.20_AM.jpg",
+            "image": "shopify://shop_images/corporate-figurines-bulk-order.jpg",
             "caption": "",
             "featured": false
           }
@@ -308,7 +308,7 @@
         "img_1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/8F8C0C8E-CAC4-4F5D-9E86-38BA164694EB.jpg",
+            "image": "shopify://shop_images/family-figurine-couple-three-cats.jpg",
             "caption": "",
             "featured": true
           }
@@ -316,7 +316,7 @@
         "img_2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/1DB4DF84-9768-4E15-B26C-1A553C5EDAE1.jpg",
+            "image": "shopify://shop_images/figurine-with-pet-dog-pen-holder.jpg",
             "caption": "",
             "featured": false
           }
@@ -342,7 +342,7 @@
         "img_4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/doctor1.jpg",
+            "image": "shopify://shop_images/doctor-with-his-figurine-at-desk.jpg",
             "caption": "",
             "featured": false
           }
@@ -397,7 +397,7 @@
           "settings": {
             "heading": "What is the Figurine Studio?",
             "icon": "lightning_bolt",
-            "row_content": "<p>Figurine Studio is our new AI-powered design tool. Upload a photo and it creates Pixar-style previews of your custom figurine in minutes. You can refine the design as much as you like and place your order right there — no WhatsApp back-and-forth needed.</p>",
+            "row_content": "<p>Figurine Studio is our new AI-powered design tool. Upload a photo and it creates cartoon-style previews of your custom figurine in minutes. You can refine the design as much as you like and place your order right there — no WhatsApp back-and-forth needed.</p>",
             "page": ""
           }
         },
